@@ -15,3 +15,6 @@ bmp2tile.exe raw\simpsons.bmp -savetiles "simpsons (tiles).psgcompr" -removedupe
 
 cd ..\bank7
 bmp2tile.exe raw\maggie.bmp -savetiles "maggie (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "maggie (tilemap).stmcompr" -savepalette "maggie (palette).bin" -exit
+
+
+cd ..\..

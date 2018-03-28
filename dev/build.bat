@@ -1,59 +1,33 @@
 @echo off
-REM echo Execute bmp2tile
-REM cd ..\gfx
-REM bmp2tile.exe raw\font.bmp -savetiles "font (tiles).psgcompr" -removedupes -tileoffset 0 -savetilemap "font (tilemap).bin" -savepalette "font (palette).bin"
-REM bmp2tile.exe raw\splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin"
-REM bmp2tile.exe raw\simpsons.bmp -savetiles "simpsons (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 80 -savetilemap "simpsons (tilemap).stmcompr" -savepalette "simpsons (palette).bin"
-
-REM bmp2tile.exe raw\right.bmp -savetiles "right (tiles).psgcompr" -noremovedupes -nomirror -planar -savepalette "right (palette).bin" -spritepalette
-REM bmp2tile.exe raw\wrong.bmp -savetiles "wrong (tiles).psgcompr" -noremovedupes -nomirror -planar -savepalette "wrong (palette).bin" -spritepalette
-REM bmp2tile.exe raw\select.png -savetiles "select (tiles).psgcompr" -noremovedupes -nomirror -planar -savepalette "select (palette).bin" -spritepalette
-
-REM cd img
-REM bmp2tile.exe raw\maggie.bmp -savetiles "maggie (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "maggie (tilemap).stmcompr" -savepalette "maggie (palette).bin"
-REM bmp2tile.exe raw\homer.bmp -savetiles "homer (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "homer (tilemap).stmcompr" -savepalette "homer (palette).bin"
-REM bmp2tile.exe raw\marge.bmp -savetiles "marge (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "marge (tilemap).stmcompr" -savepalette "marge (palette).bin"
-
-REM cd banks\bank6
-REM bmp2tile.exe raw\splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin"
-REM bmp2tile.exe raw\simpsons.bmp -savetiles "simpsons (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 96 -savetilemap "simpsons (tilemap).stmcompr" -savepalette "simpsons (palette).bin"
-
-REM cd ..
-REM folder2c bank6 bank6 6
-
-REM cd banks\bank7
-REM bmp2tile.exe raw\maggie.bmp -savetiles "maggie (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 112 -savetilemap "maggie (tilemap).stmcompr" -savepalette "maggie (palette).bin"
-
-REM cd ..
-REM folder2c bank7 bank7 7
-
-
 REM echo Build gfx.c and gfx.h from gfx folder
-REM folder2c ..\gfx gfx
-REM folder2c ..\img img
-REM folder2c ..\psg psg
+folder2c ..\gfx gfx
+
+REM echo Build psg.c and psg.h from psg folder
+folder2c ..\psg psg
+
 
 REM echo Build gfx
-REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
-REM if %errorlevel% NEQ 0 goto :EOF
-
-REM echo Build img
-REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 img.c
-REM if %errorlevel% NEQ 0 goto :EOF
+sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
 
 REM echo Build psg
-REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
-REM if %errorlevel% NEQ 0 goto :EOF
+sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
+
+
+REM echo Build banks.c and banks.h from banks folder
+cd banks
+folder2c bank6 bank6 6
+folder2c bank7 bank7 7
+
 
 REM echo Build banks
-REM cd banks
-REM sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
-REM sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
-REM sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK4 bank4.c
-REM sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK5 bank5.c
-REM sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK6 bank6.c
-REM sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK7 bank7.c
-REM cd ..
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK4 bank4.c
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK5 bank5.c
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK6 bank6.c
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK7 bank7.c
+cd ..
+
 
 REM echo Build main
 sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
@@ -81,13 +55,16 @@ psg.rel
 
 if %errorlevel% NEQ 0 goto :EOF
 
+
 REM echo Binary output
 ihx2sms output.ihx output.sms
 if %errorlevel% NEQ 0 goto :EOF
 
+
 REM echo Copy output
 copy output.sms ..\asm
 copy output.sms ..\SimpsonsTriviaSMS.sms
+
 
 REM echo Disassemble output
 cd ..\asm
@@ -95,12 +72,12 @@ smsexamine.exe output.sms
 cd ..\dev
 
 REM echo Delete
-REM cd banks
-REM del *.asm > nul
-REM del *.lst > nul
-REM del *.rel > nul
-REM del *.sym > nul
-REM cd ..
+cd banks
+del *.asm > nul
+del *.lst > nul
+del *.rel > nul
+del *.sym > nul
+cd ..
 
 del *.asm > nul
 del *.ihx > nul
@@ -108,8 +85,7 @@ del *.lk > nul
 del *.lst > nul
 del *.map > nul
 del *.noi > nul
-REM del *.rel > nul
-del main.rel > nul
+del *.rel > nul
 del *.sym > nul
 
 output.sms
