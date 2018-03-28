@@ -57,6 +57,7 @@ void screen_intro_screen_update( unsigned char *screen_type, unsigned int curr_j
 	input = engine_input_manager_hold_fire1( curr_joypad1, prev_joypad1);
 	if( input )
 	{
+		engine_audio_manager_sound_right();
 		*screen_type = SCREEN_TYPE_DIFF;
 		return;
 	}
