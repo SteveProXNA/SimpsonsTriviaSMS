@@ -21,7 +21,6 @@ asm/*
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
@@ -33,7 +32,6 @@ asm/*
 *.dylib
 
 # Executables
-*.exe
 *.out
 *.app
 *.i*86
