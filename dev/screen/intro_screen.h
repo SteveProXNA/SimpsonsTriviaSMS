@@ -21,7 +21,7 @@ void screen_intro_screen_load()
 	engine_font_manager_draw_text( LOCALE_PRESS, 2, 13 );
 	engine_font_manager_draw_text( LOCALE_START, 2, 14 );
 
-	if ( hacker_cheat )
+	if( hacker_cheat )
 	{
 		engine_font_manager_draw_text( LOCALE_CHEAT, 25, 10 );
 		engine_font_manager_draw_text( LOCALE_MODE, 25, 11 );
@@ -37,7 +37,7 @@ void screen_intro_screen_update( unsigned char *screen_type, unsigned int curr_j
 	rand();
 
 	screen_bases_screen_timer++;
-	if ( screen_bases_screen_timer >= screen_intro_screen_delay )
+	if( screen_bases_screen_timer >= screen_intro_screen_delay )
 	{
 		if( screen_bases_screen_count )
 		{
@@ -62,7 +62,7 @@ void screen_intro_screen_update( unsigned char *screen_type, unsigned int curr_j
 	}
 	if( engine_input_manager_hold_fire2( curr_joypad1, prev_joypad1 ) )
 	{
-		if ( !hacker_cheat && !local_cheat )
+		if( !hacker_cheat && !local_cheat )
 		{
 			cheat_count++;
 			if( cheat_count >= CHEAT_TOTAL )

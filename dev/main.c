@@ -25,8 +25,8 @@ void main( void )
 
 	engine_asm_manager_clear_VRAM();
 
-	SMS_setSpriteMode(SPRITEMODE_NORMAL);
-	SMS_useFirstHalfTilesforSprites(true);
+	SMS_setSpriteMode( SPRITEMODE_NORMAL );
+	SMS_useFirstHalfTilesforSprites( true );
 
 	engine_content_manager_load_font();
 	engine_content_manager_load_sprites();
@@ -37,7 +37,7 @@ void main( void )
 	enum_next_screen_type = SCREEN_TYPE_SPLASH;
 
 	SMS_displayOn();
-	for (;;)
+	for(;;)
 	{
 		if( SMS_queryPauseRequested() )
 		{
@@ -47,7 +47,7 @@ void main( void )
 			{
 				if( hacker_debug )
 				{
-					engine_font_manager_draw_text(LOCALE_PAUSED, 13, 12);
+					engine_font_manager_draw_text( LOCALE_PAUSED, 13, 12 );
 				}
 				PSGSilenceChannels();
 			}
@@ -55,27 +55,27 @@ void main( void )
 			{
 				if( hacker_debug )
 				{
-					engine_font_manager_draw_text(LOCALE_RESUME, 13, 12);
+					engine_font_manager_draw_text( LOCALE_RESUME, 13, 12 );
 				}
 				PSGRestoreVolumes();
 			}
 		}
 
-		if (global_pause)
+		if(global_pause)
 		{
 			continue;
 		}
 
-		if (enum_curr_screen_type != enum_next_screen_type)
+		if( enum_curr_screen_type != enum_next_screen_type )
 		{
 			enum_curr_screen_type = enum_next_screen_type;
-			load_method[enum_curr_screen_type]();
+			load_method[ enum_curr_screen_type ]();
 		}
 
 		SMS_initSprites();
 
 		curr_joypad1 = SMS_getKeysStatus();
-		update_method[enum_curr_screen_type](&enum_next_screen_type, curr_joypad1, prev_joypad1);
+		update_method[ enum_curr_screen_type ]( &enum_next_screen_type, curr_joypad1, prev_joypad1 );
 
 		SMS_finalizeSprites();
 		SMS_waitForVBlank();
@@ -101,17 +101,9 @@ void custom_initialize()
 	load_method[screen_type_quiz] = screen_quiz_screen_load;
 	load_method[screen_type_score] = screen_score_screen_load;
 	load_method[screen_type_over] = screen_over_screen_load;
-	load_method[screen_type_credit] = screen_credit_screen_load;
 	load_method[screen_type_diff] = screen_diff_screen_load;
 	load_method[screen_type_long] = screen_long_screen_load;
 
-	// TODO - delete
-	load_method[screen_type_test1] = screen_test1_screen_load;
-	load_method[screen_type_test2] = screen_test2_screen_load;
-	load_method[screen_type_test3] = screen_test3_screen_load;
-	load_method[screen_type_test4] = screen_test4_screen_load;
-	load_method[screen_type_test5] = screen_test5_screen_load;
-	// TODO - delete
 
 	// Set update methods
 	update_method[screen_type_splash] = screen_splash_screen_update;
@@ -124,20 +116,11 @@ void custom_initialize()
 	update_method[screen_type_quiz] = screen_quiz_screen_update;
 	update_method[screen_type_score] = screen_score_screen_update;
 	update_method[screen_type_over] = screen_over_screen_update;
-	update_method[screen_type_credit] = screen_credit_screen_update;
 	update_method[screen_type_diff] = screen_diff_screen_update;
 	update_method[screen_type_long] = screen_long_screen_update;
 
 
-	// TODO - delete
-	update_method[screen_type_test1] = screen_test1_screen_update;
-	update_method[screen_type_test2] = screen_test2_screen_update;
-	update_method[screen_type_test3] = screen_test3_screen_update;
-	update_method[screen_type_test4] = screen_test4_screen_update;
-	update_method[screen_type_test5] = screen_test5_screen_update;
-	// TODO - delete
-
-
+	// Initialize hack manager.
 	engine_hack_manager_init();
 	engine_hack_manager_invert();
 
@@ -158,15 +141,6 @@ void custom_initialize()
 	screen_play_screen_init();
 	screen_quiz_screen_init();
 	screen_over_screen_init();
-
-
-	// TODO - delete
-	screen_test1_screen_init();
-	screen_test2_screen_init();
-	screen_test3_screen_init();
-	screen_test4_screen_init();
-	screen_test5_screen_init();
-	// TODO - delete
 }
 
 SMS_EMBED_SEGA_ROM_HEADER(9999, 0);

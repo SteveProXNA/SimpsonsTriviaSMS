@@ -17,7 +17,7 @@ void engine_score_manager_init()
 }
 void engine_score_manager_base()
 {
-	engine_font_manager_draw_text(LOCALE_SCORE, TITLE_X, TITLE_Y);
+	engine_font_manager_draw_text( LOCALE_SCORE, TITLE_X, TITLE_Y );
 	engine_score_manager_draw();
 }
 void engine_score_manager_update()

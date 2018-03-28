@@ -29,12 +29,12 @@ void screen_score_screen_load()
 		return;
 	}
 
-	percent = (float)score_player / (float)question_count * 100;
+	percent = ( float )score_player / ( float )question_count * 100;
 	engine_font_manager_draw_data_ZERO( percent, SUMMARY_DATA_X, 18 );
 	engine_font_manager_draw_text( LOCALE_PERCENT_SYM, SUMMARY_DATA_X + 1, 18 );
 }
 
-void screen_score_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_score_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned char input = 0;
 

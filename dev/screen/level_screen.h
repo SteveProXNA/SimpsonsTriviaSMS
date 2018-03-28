@@ -18,7 +18,7 @@ void screen_level_screen_load()
 	engine_select_manager_clear();
 }
 
-void screen_level_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_level_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned int test_curr_joypad1 = curr_joypad1;
 	unsigned int test_prev_joypad1 = prev_joypad1;

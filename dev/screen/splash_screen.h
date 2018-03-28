@@ -19,19 +19,19 @@ void screen_splash_screen_load()
 	SMS_displayOn();
 }
 
-void screen_splash_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_splash_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned char input = 0;
 	unsigned char level = 0;
 
-	input = engine_input_manager_hold_fire1(curr_joypad1, prev_joypad1);
+	input = engine_input_manager_hold_fire1( curr_joypad1, prev_joypad1 );
 	if( input )
 	{
 		level = 1;
 	}
 
 	screen_bases_screen_timer++;
-	if (screen_bases_screen_timer >= screen_splash_screen_delay)
+	if( screen_bases_screen_timer >= screen_splash_screen_delay )
 	{
 		level = 1;
 	}

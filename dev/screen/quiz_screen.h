@@ -36,7 +36,7 @@ void screen_quiz_screen_load()
 	}
 }
 
-void screen_quiz_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_quiz_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	// Logic: display right or wrong sprite for delay.
 	// Increment question counter
@@ -56,22 +56,22 @@ void screen_quiz_screen_update(unsigned char *screen_type, unsigned int curr_joy
 		engine_select_manager_draw_wrong();
 	}
 
-	input = engine_input_manager_hold_fire1( curr_joypad1, prev_joypad1);
+	input = engine_input_manager_hold_fire1( curr_joypad1, prev_joypad1 );
 	if( input )
 	{
 		level = 1;
 	}
 
 	screen_bases_screen_timer++;
-	if (screen_bases_screen_timer >= screen_quiz_screen_delay)
+	if( screen_bases_screen_timer >= screen_quiz_screen_delay )
 	{
 		level = 1;
 	}
 
-	if ( level )
+	if( level )
 	{
 		question_index++;
-		if ( question_index >= question_long )
+		if( question_index >= question_long )
 		{
 			*screen_type = SCREEN_TYPE_OVER;
 			return;

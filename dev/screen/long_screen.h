@@ -17,13 +17,13 @@ void screen_long_screen_load()
 	screen_long_screen_state = SELECT_TYPE_BEFORE;
 
 	engine_select_manager_clear();
-	engine_font_manager_draw_text( LOCALE_QUESTIONS, 2, 6);
+	engine_font_manager_draw_text( LOCALE_QUESTIONS, 2, 6 );
 
 	engine_select_manager_load_long();
 	engine_select_manager_base();
 }
 
-void screen_long_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_long_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned char input = 0;
 	rand();
@@ -31,24 +31,24 @@ void screen_long_screen_update(unsigned char *screen_type, unsigned int curr_joy
 	if( SELECT_TYPE_BEFORE == screen_long_screen_state )
 	{
 		engine_select_manager_draw_select();
-		input = engine_input_manager_hold_up(curr_joypad1, prev_joypad1);
+		input = engine_input_manager_hold_up( curr_joypad1, prev_joypad1 );
 		if( input )
 		{
 			long_select = engine_select_manager_move_up( long_select );
 		}
-		input = engine_input_manager_hold_down(curr_joypad1, prev_joypad1);
-		if (input)
+		input = engine_input_manager_hold_down( curr_joypad1, prev_joypad1 );
+		if(input)
 		{
 			long_select = engine_select_manager_move_down( long_select );
 		}
-		input = engine_input_manager_hold_fire2(curr_joypad1, prev_joypad1);
-		if (input)
+		input = engine_input_manager_hold_fire2( curr_joypad1, prev_joypad1 );
+		if(input)
 		{
 			*screen_type = SCREEN_TYPE_DIFF;
 			return;
 		}
-		input = engine_input_manager_hold_fire1(curr_joypad1, prev_joypad1);
-		if (input)
+		input = engine_input_manager_hold_fire1( curr_joypad1, prev_joypad1 );
+		if(input)
 		{
 			// Set the question count here.
 			question_long = select_long_option[ long_select ];
@@ -63,7 +63,7 @@ void screen_long_screen_update(unsigned char *screen_type, unsigned int curr_joy
 		engine_select_manager_draw_right();
 
 		screen_bases_screen_timer++;
-		if (screen_bases_screen_timer >= screen_long_screen_delay)
+		if( screen_bases_screen_timer >= screen_long_screen_delay )
 		{
 			*screen_type = SCREEN_TYPE_READY;
 			return;

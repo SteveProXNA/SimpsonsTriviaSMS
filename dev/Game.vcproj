@@ -200,10 +200,6 @@
 					>
 				</File>
 				<File
-					RelativePath=".\engine\debug_manager.h"
-					>
-				</File>
-				<File
 					RelativePath=".\engine\enum_manager.h"
 					>
 				</File>
@@ -217,10 +213,6 @@
 				</File>
 				<File
 					RelativePath=".\engine\hack_manager.h"
-					>
-				</File>
-				<File
-					RelativePath=".\engine\image_manager.h"
 					>
 				</File>
 				<File
@@ -257,10 +249,6 @@
 				>
 				<File
 					RelativePath=".\screen\bases_screen.h"
-					>
-				</File>
-				<File
-					RelativePath=".\screen\credit_screen.h"
 					>
 				</File>
 				<File
@@ -305,26 +293,6 @@
 				</File>
 				<File
 					RelativePath=".\screen\splash_screen.h"
-					>
-				</File>
-				<File
-					RelativePath=".\screen\test1_screen.h"
-					>
-				</File>
-				<File
-					RelativePath=".\screen\test2_screen.h"
-					>
-				</File>
-				<File
-					RelativePath=".\screen\test3_screen.h"
-					>
-				</File>
-				<File
-					RelativePath=".\screen\test4_screen.h"
-					>
-				</File>
-				<File
-					RelativePath=".\screen\test5_screen.h"
 					>
 				</File>
 				<File

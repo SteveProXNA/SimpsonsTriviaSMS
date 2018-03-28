@@ -21,10 +21,10 @@ void screen_play_screen_load()
 	engine_score_manager_base();
 
 	question_value = quiz_questions[question_index];
-	option1_value = quiz_options[question_value][0];
-	option2_value = quiz_options[question_value][1];
-	option3_value = quiz_options[question_value][2];
-	option4_value = quiz_options[question_value][3];
+	option1_value = quiz_options[ question_value ][ 0 ];
+	option2_value = quiz_options[ question_value ][ 1 ];
+	option3_value = quiz_options[ question_value ][ 2 ];
+	option4_value = quiz_options[ question_value ][ 3 ];
 
 	engine_select_manager_base();
 	engine_quiz_manager_load(question_index, question_value, option1_value, option2_value, option3_value, option4_value);
@@ -33,7 +33,7 @@ void screen_play_screen_load()
 	engine_quiz_manager_cheat(answer_index);
 }
 
-void screen_play_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_play_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned char input = 0;
 	input = engine_input_manager_hold_fire1( curr_joypad1, prev_joypad1 );
@@ -53,20 +53,20 @@ void screen_play_screen_update(unsigned char *screen_type, unsigned int curr_joy
 	engine_select_manager_draw_select();
 
 	screen_bases_screen_timer++;
-	if ( screen_bases_screen_timer >= screen_cheat_screen_delay )
+	if( screen_bases_screen_timer >= screen_cheat_screen_delay )
 	{
 		engine_quiz_manager_cheat2( answer_index, screen_bases_screen_count );
 		screen_bases_screen_count = !screen_bases_screen_count;
 		screen_bases_screen_timer = 0;
 	}
 
-	input = engine_input_manager_hold_up(curr_joypad1, prev_joypad1);
+	input = engine_input_manager_hold_up( curr_joypad1, prev_joypad1 );
 	if( input )
 	{
 		quiz_select = engine_select_manager_move_up( quiz_select );
 	}
-	input = engine_input_manager_hold_down(curr_joypad1, prev_joypad1);
-	if (input)
+	input = engine_input_manager_hold_down( curr_joypad1, prev_joypad1 );
+	if(input)
 	{
 		quiz_select = engine_select_manager_move_down( quiz_select );
 	}

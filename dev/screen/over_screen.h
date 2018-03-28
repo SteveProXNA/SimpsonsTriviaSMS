@@ -36,20 +36,20 @@ void screen_over_screen_load()
 	engine_font_manager_draw_data_ZERO( score_player, SUMMARY_DATA_X, 14 );
 
 	engine_font_manager_draw_text( LOCALE_OVER_PERCENT, SUMMARY_TEXT_X, 17 );
-	percent = (float)score_player / (float)question_count * 100;
+	percent = ( float )score_player / ( float )question_count * 100;
 	engine_font_manager_draw_data_ZERO( percent, SUMMARY_DATA_X, 18 );
 	engine_font_manager_draw_text( LOCALE_PERCENT_SYM, SUMMARY_DATA_X + 1, 18 );
 
 	engine_audio_manager_finish_music();
 }
 
-void screen_over_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_over_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned char input = 0;
 	unsigned char level = 0;
 
 	screen_bases_screen_timer++;
-	if ( screen_bases_screen_timer < screen_over_screen_delay1 )
+	if( screen_bases_screen_timer < screen_over_screen_delay1 )
 	{
 		return;
 	}
@@ -61,12 +61,12 @@ void screen_over_screen_update(unsigned char *screen_type, unsigned int curr_joy
 	}
 
 	screen_bases_screen_timer++;
-	if ( screen_bases_screen_timer >= screen_over_screen_delay2 )
+	if( screen_bases_screen_timer >= screen_over_screen_delay2 )
 	{
 		level = 1;
 	}
 
-	if ( level )
+	if( level )
 	{
 		*screen_type = SCREEN_TYPE_TITLE;
 		return;

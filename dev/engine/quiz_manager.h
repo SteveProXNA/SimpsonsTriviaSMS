@@ -16,10 +16,10 @@
 #define QUIZ_BANK	2
 
 extern unsigned char diff_select;
-extern unsigned char quiz_questions[MAX_QUESTIONS];
-extern unsigned char quiz_options[MAX_QUESTIONS][MAX_OPTIONS];
-extern unsigned char option_height[MAX_OPTIONS];
-extern unsigned char select_diff_option[MAX_OPTIONS][6];
+extern unsigned char quiz_questions[ MAX_QUESTIONS ];
+extern unsigned char quiz_options[ MAX_QUESTIONS ][ MAX_OPTIONS ];
+extern unsigned char option_height[ MAX_OPTIONS ];
+extern unsigned char select_diff_option[ MAX_OPTIONS ][6];
 extern unsigned char question_value, answer_index, answer_value, question_long;
 extern unsigned char local_cheat;
 
@@ -57,7 +57,7 @@ void engine_quiz_manager_base3( unsigned char y )
 
 void engine_quiz_manager_bank( unsigned char b )
 {
-	SMS_mapROMBank(b);
+	SMS_mapROMBank( b );
 }
 
 void engine_quiz_manager_answer( unsigned char q )
@@ -87,15 +87,15 @@ void engine_quiz_manager_cheat( unsigned char ans )
 {
 	unsigned char idx, cheat_Y;
 
-	for( idx = 0; idx < MAX_OPTIONS; idx++)
+	for( idx = 0; idx < MAX_OPTIONS; idx++ )
 	{
-		cheat_Y = option_height[idx];
+		cheat_Y = option_height[ idx ];
 		engine_font_manager_draw_text( LOCALE_ARROW_SPACE, QUIZ_X-1, cheat_Y );
 	}
 
 	if( local_cheat )
 	{
-		cheat_Y = option_height[ans];
+		cheat_Y = option_height[ ans ];
 		engine_font_manager_draw_text( LOCALE_ARROW_LEFT, QUIZ_X-1, cheat_Y );
 	}
 }
@@ -104,8 +104,8 @@ void engine_quiz_manager_cheat2( unsigned char ans, unsigned char flag )
 	unsigned char cheat_Y;
 	if( local_cheat )
 	{
-		cheat_Y = option_height[ans];
-		if ( !flag )
+		cheat_Y = option_height[ ans ];
+		if( !flag )
 		{
 			engine_font_manager_draw_text( LOCALE_ARROW_LEFT, QUIZ_X - 1, cheat_Y );
 		}

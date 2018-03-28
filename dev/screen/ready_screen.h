@@ -42,7 +42,7 @@ void screen_ready_screen_load()
 	screen_ready_screen_dots = 0;
 }
 
-void screen_ready_screen_update(unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1)
+void screen_ready_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )
 {
 	unsigned char input = 0;
 	unsigned char level = 0;
@@ -62,7 +62,7 @@ void screen_ready_screen_update(unsigned char *screen_type, unsigned int curr_jo
 
 	// Moving dots "animation".
 	screen_bases_screen_timer2++;
-	if ( screen_bases_screen_timer2 >= screen_ready_screen_delay2 )
+	if( screen_bases_screen_timer2 >= screen_ready_screen_delay2 )
 	{
 		screen_ready_screen_dots++;
 		if( screen_ready_screen_dots > 3 )
@@ -84,7 +84,7 @@ void screen_ready_screen_update(unsigned char *screen_type, unsigned int curr_jo
 		level = 1;
 	}
 
-	if ( level )
+	if( level )
 	{
 		engine_select_manager_clear();
 		engine_audio_manager_stop_music();
