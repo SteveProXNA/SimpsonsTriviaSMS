@@ -19,7 +19,7 @@ extern unsigned char diff_select;
 extern unsigned char quiz_questions[ MAX_QUESTIONS ];
 extern unsigned char quiz_options[ MAX_QUESTIONS ][ MAX_OPTIONS ];
 extern unsigned char option_height[ MAX_OPTIONS ];
-extern unsigned char select_diff_option[ MAX_OPTIONS ][6];
+extern unsigned char select_diff_option[ MAX_OPTIONS ][ 6 ];
 extern unsigned char question_value, answer_index, answer_value, question_long;
 extern unsigned char local_cheat;
 
@@ -28,10 +28,10 @@ static void engine_quiz_manager_diff( unsigned char x, unsigned char y );
 
 void engine_quiz_manager_init()
 {
-	option_height[0] = OPTA_Y;
-	option_height[1] = OPTB_Y;
-	option_height[2] = OPTC_Y;
-	option_height[3] = OPTD_Y;
+	option_height[ 0 ] = OPTA_Y;
+	option_height[ 1 ] = OPTB_Y;
+	option_height[ 2 ] = OPTC_Y;
+	option_height[ 3 ] = OPTD_Y;
 }
 
 void engine_quiz_manager_base()
@@ -64,23 +64,23 @@ void engine_quiz_manager_answer( unsigned char q )
 {
 	if( DIFF_TYPE_EASY == diff_select )
 	{
-		answer_value = bank2_soln[q];
+		answer_value = bank2_soln[ q ];
 	}
 	else if( DIFF_TYPE_NORM == diff_select )
 	{
-		answer_value = bank3_soln[q];
+		answer_value = bank3_soln[ q ];
 	}
 	else if( DIFF_TYPE_HARD == diff_select )
 	{
-		answer_value = bank4_soln[q];
+		answer_value = bank4_soln[ q ];
 	}
 	else if( DIFF_TYPE_ARGH == diff_select )
 	{
-		answer_value = bank5_soln[q];
+		answer_value = bank5_soln[ q ];
 	}
 
 	answer_value -= 1;		// Zero based index
-	answer_index = quiz_options[q][answer_value];
+	answer_index = quiz_options[ q ][ answer_value ];
 }
 
 void engine_quiz_manager_cheat( unsigned char ans )
@@ -116,15 +116,15 @@ void engine_quiz_manager_cheat2( unsigned char ans, unsigned char flag )
 	}
 }
 
-void engine_quiz_manager_load(unsigned char qi, unsigned char qv, unsigned char opt1, unsigned char opt2, unsigned char opt3, unsigned char opt4)
+void engine_quiz_manager_load( unsigned char qi, unsigned char qv, unsigned char opt1, unsigned char opt2, unsigned char opt3, unsigned char opt4)
 {
 	unsigned char opt1_Y, opt2_Y, opt3_Y, opt4_Y;
 	unsigned char bank;
 
-	opt1_Y = option_height[opt1];
-	opt2_Y = option_height[opt2];
-	opt3_Y = option_height[opt3];
-	opt4_Y = option_height[opt4];
+	opt1_Y = option_height[ opt1 ];
+	opt2_Y = option_height[ opt2 ];
+	opt3_Y = option_height[ opt3 ];
+	opt4_Y = option_height[ opt4 ];
 
 	// Number.
 	engine_font_manager_draw_data_ZERO( qi + 1, QUIZ_X + 12, TITLE_Y );

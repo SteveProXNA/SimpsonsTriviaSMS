@@ -11,8 +11,8 @@ unsigned char enum_curr_screen_type, enum_next_screen_type;
 
 void custom_initialize();
 
-void (*load_method[MAX_STATES])();
-void (*update_method[MAX_STATES])(unsigned char *screen_type, const unsigned int curr_joypad1, const unsigned int prev_joypad1);
+void ( *load_method[ MAX_STATES ] )();
+void ( *update_method[ MAX_STATES ] )( unsigned char *screen_type, const unsigned int curr_joypad1, const unsigned int prev_joypad1 );
 
 void main( void )
 {
@@ -143,5 +143,5 @@ void custom_initialize()
 	screen_over_screen_init();
 }
 
-SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
-SMS_EMBED_SDSC_HEADER(1, 0, 2018, 3, 27, "StevePro Studios", "Simpsons Trivia", "Simpsons Trivia game for the SMS Power! 2018 Competition");
+SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
+SMS_EMBED_SDSC_HEADER( 1, 0, 2018, 3, 27, "StevePro Studios", "Simpsons Trivia", "Simpsons Trivia game for the SMS Power! 2018 Competition" );

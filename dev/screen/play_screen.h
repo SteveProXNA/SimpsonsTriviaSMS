@@ -11,7 +11,7 @@ extern unsigned char answer_index, answer_value;
 
 void screen_play_screen_init()
 {
-	screen_cheat_screen_delay = TITLE_DELAY * 2/5;
+	screen_cheat_screen_delay = TITLE_DELAY * 2 / 5;
 }
 
 void screen_play_screen_load()
@@ -27,10 +27,10 @@ void screen_play_screen_load()
 	option4_value = quiz_options[ question_value ][ 3 ];
 
 	engine_select_manager_base();
-	engine_quiz_manager_load(question_index, question_value, option1_value, option2_value, option3_value, option4_value);
+	engine_quiz_manager_load( question_index, question_value, option1_value, option2_value, option3_value, option4_value );
 
-	engine_quiz_manager_answer(question_value);
-	engine_quiz_manager_cheat(answer_index);
+	engine_quiz_manager_answer( question_value );
+	engine_quiz_manager_cheat( answer_index );
 }
 
 void screen_play_screen_update( unsigned char *screen_type, unsigned int curr_joypad1, unsigned int prev_joypad1 )

@@ -6,7 +6,7 @@ void screen_number_screen_load()
 	SMS_displayOff();
 	engine_content_manager_load_maggie();
 	engine_content_manager_load_sprites();
-	SMS_setSpritePaletteColor( 0, RGB(3,3,3) );
+	SMS_setSpritePaletteColor( 0, RGB( 3,3,3 ) );
 	SMS_displayOn();
 }
 

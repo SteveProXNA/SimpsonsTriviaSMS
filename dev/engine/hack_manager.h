@@ -1,8 +1,8 @@
 #ifndef _HACK_MANAGER_H_
 #define _HACK_MANAGER_H_
 
-#define PEEK( addr)			(*(unsigned char *)(addr))
-#define POKE(addr, data)	(*(unsigned char *)(addr) = (data))
+#define PEEK( addr)			(* ( unsigned char *)( addr ) )
+#define POKE( addr, data )	(* ( unsigned char *)( addr ) = ( data ) )
 
 extern unsigned char hacker_debug;
 extern unsigned char hacker_cheat, hacker_random;

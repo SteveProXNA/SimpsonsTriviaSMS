@@ -16,7 +16,7 @@ void screen_title_screen_load()
 
 	SMS_displayOff();
 	engine_content_manager_title();
-	SMS_setSpritePaletteColor( 0, RGB(3,3,3) );
+	SMS_setSpritePaletteColor( 0, RGB( 3,3,3 ) );
 
 	if( hacker_extra )
 	{
