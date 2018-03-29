@@ -128,7 +128,6 @@ void engine_quiz_manager_load( unsigned char qi, unsigned char qv, unsigned char
 
 	// Number.
 	engine_font_manager_draw_data_ZERO( qi + 1, QUIZ_X + 12, TITLE_Y );
-	qv = qv * 1;
 
 	bank = diff_select + QUIZ_BANK;
 	engine_quiz_manager_bank( bank );
