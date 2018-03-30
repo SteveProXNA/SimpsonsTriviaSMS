@@ -3,11 +3,11 @@
 
 extern unsigned char screen_bases_screen_count;
 extern unsigned int screen_bases_screen_timer;
-extern unsigned char screen_intro_screen_delay;
+extern unsigned char screen_title_screen_delay;
 
 void screen_title_screen_init()
 {
-	screen_splash_screen_delay = NORMAL_DELAY;
+	screen_title_screen_delay = NORMAL_DELAY;
 }
 
 void screen_title_screen_load()
@@ -33,7 +33,7 @@ void screen_title_screen_update( unsigned char *screen_type, unsigned int curr_j
 	unsigned char test_prev_joypad1 = prev_joypad1;
 
 	screen_bases_screen_timer++;
-	if( screen_bases_screen_timer >= screen_splash_screen_delay )
+	if( screen_bases_screen_timer >= screen_title_screen_delay )
 	{
 		*screen_type = SCREEN_TYPE_INTRO;
 	}

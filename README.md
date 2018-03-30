@@ -60,7 +60,8 @@ Special thanks to:
 Maxim, Martin, Ville Helin, Steve Snake, Bock + Calindro
 <br />
 <br />
-Also, I "borrowed" sound effects from Baluba Balok http://bit.ly/2nnSQJG Thanks!
+Also, I "borrowed" sound effects from Baluba Balok http://bit.ly/2nnSQJG 
+<br />and Super Uwol! https://bit.ly/2GljuNB.  Thanks very much guys!
 <br />
 Note: game complete screen has the "Flicky" game over music from SMS Power!
 <br />
@@ -68,6 +69,9 @@ Note: game complete screen has the "Flicky" game over music from SMS Power!
 Reference to original Simpsons Trivia questions can be found here:
 <br />
 https://www.absurdtrivia.com/trivia/the-simpsons
+
+###### SOCIAL MEDIA
+- You Tube https://youtu.be/6VpGrZLTGTk
 
 ###### OUTSTANDING
 It would be nice to have more graphics of The Simpsons characters throughout the quiz.

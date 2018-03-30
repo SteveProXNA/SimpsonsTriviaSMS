@@ -3,7 +3,7 @@
 
 extern unsigned char screen_bases_screen_count;
 extern unsigned int screen_bases_screen_timer;
-extern unsigned char screen_splash_screen_delay;
+extern unsigned int screen_splash_screen_delay;
 
 void screen_splash_screen_init()
 {

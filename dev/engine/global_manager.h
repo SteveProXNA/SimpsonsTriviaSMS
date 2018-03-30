@@ -15,7 +15,7 @@
 #define SPRITE_TILES		64
 
 // Delay.
-#define SPLASH_DELAY		15
+#define SPLASH_DELAY		150
 #define TITLE_DELAY			100
 #define NORMAL_DELAY		50
 
