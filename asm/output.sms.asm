@@ -19,7 +19,7 @@ BANKS 8
 ; Name:        Simpsons Trivia
 ; Author:      StevePro Studios
 ; Date:        27.03.2018
-; Version:     1.00
+; Version:     1.02
 ; Description: Simpsons Trivia game for the SMS Power! 2018 Competition
 
 .BANK 0 SLOT 0

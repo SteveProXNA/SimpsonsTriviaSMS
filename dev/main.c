@@ -144,4 +144,4 @@ void custom_initialize()
 }
 
 SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
-SMS_EMBED_SDSC_HEADER( 1, 0, 2018, 3, 27, "StevePro Studios", "Simpsons Trivia", "Simpsons Trivia game for the SMS Power! 2018 Competition" );
+SMS_EMBED_SDSC_HEADER( 1, 2, 2018, 3, 27, "StevePro Studios", "Simpsons Trivia", "Simpsons Trivia game for the SMS Power! 2018 Competition" );
