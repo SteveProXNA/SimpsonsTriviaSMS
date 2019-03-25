@@ -2,7 +2,7 @@
 Simpsons Trivia game for the SMS Power! 2018 Competition
 
 ###### RELEASE
-Tuesday, 27th March 2017
+Tuesday, 27th March 2018
 
 ###### INTRO
 The Simpsons is a hit TV show that has become a world wide phenomenon.
