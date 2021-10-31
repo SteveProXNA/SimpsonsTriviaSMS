@@ -1,0 +1,92 @@
+;!FILE sound_manager.asm
+XL2
+H 9 areas 38 global symbols
+M sound_manager
+O -mz80
+S _engine_sample_manager_init Ref0000
+S _engine_sample_manager_play Ref0000
+S _hacker_sound Ref0000
+S .__.ABS. Def0000
+S _sound_sample_data Ref0000
+S _sound_sample_bank Ref0000
+S _devkit_SMS_mapROMBank Ref0000
+A _CODE size 44 flags 0 addr 0
+S A$sound_manager$130 Def003D
+S A$sound_manager$131 Def003E
+S A$sound_manager$122 Def0036
+S A$sound_manager$113 Def0030
+S C$sound_manager.c$30$1$24 Def0036
+S C$sound_manager.c$14$1$22 Def0000
+S A$sound_manager$123 Def0037
+S A$sound_manager$114 Def0033
+S A$sound_manager$105 Def0026
+S C$sound_manager.c$31$1$24 Def003D
+S C$sound_manager.c$22$1$24 Def0019
+S C$sound_manager.c$15$1$22 Def0003
+S A$sound_manager$133 Def0041
+S A$sound_manager$124 Def0038
+S A$sound_manager$106 Def0029
+S C$sound_manager.c$32$1$24 Def0043
+S C$sound_manager.c$23$1$24 Def0026
+S A$sound_manager$125 Def0039
+S A$sound_manager$107 Def002C
+S C$sound_manager.c$17$1$22 Def0011
+S A$sound_manager$126 Def003C
+S A$sound_manager$108 Def002E
+S C$sound_manager.c$25$1$24 Def0030
+S A$sound_manager$118 Def0034
+S A$sound_manager$109 Def002F
+S A$sound_manager$138 Def0043
+S C$sound_manager.c$27$2$25 Def0034
+S C$sound_manager.c$12$0$0 Def0000
+S A$sound_manager$60 Def0000
+S A$sound_manager$90 Def0017
+S A$sound_manager$65 Def0003
+S A$sound_manager$94 Def0019
+S A$sound_manager$95 Def001C
+S A$sound_manager$96 Def001F
+S A$sound_manager$97 Def0021
+S A$sound_manager$88 Def0011
+S A$sound_manager$98 Def0022
+S A$sound_manager$89 Def0013
+S A$sound_manager$99 Def0023
+S G$engine_sound_manager_init$0$0 Def0000
+S G$engine_sound_manager_play$0$0 Def0011
+S _engine_sound_manager_init Def0000
+S _engine_sound_manager_play Def0011
+S G$psgInit$0$0 Def0006
+S XG$engine_sound_manager_init$0$0 Def0003
+S XG$engine_sound_manager_play$0$0 Def0043
+S A$sound_manager$100 Def0024
+S _psgInit Def0006
+S A$sound_manager$101 Def0025
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 06 00 C3 00 00
+R 00 00 00 00 00 03 00 00 02 06 00 00
+T 06 00
+R 00 00 00 00
+T 06 00 9F BF DF FF 81 00 A1 00 00 C1 00
+R 00 00 00 00
+T 11 00
+R 00 00 00 00
+T 11 00 DD E5 DD 21 00 00 DD 39 01 00 00 DD 6E 04
+R 00 00 00 00 02 0B 04 00
+T 1F 00 26 00 29 09 4E 23 46 11 00 00 DD 6E 04 26
+R 00 00 00 00 02 0A 05 00
+T 2D 00 00 19 56 3A 00 00 B7 28 0B C5 D5 33 CD
+R 00 00 00 00 02 06 02 00
+T 3A 00 00 00 33 E1 CD 00 00
+R 00 00 00 00 02 02 06 00 02 07 01 00
+T 41 00
+R 00 00 00 00
+T 41 00 DD E1 C9
+R 00 00 00 00

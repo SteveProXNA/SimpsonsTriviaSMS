@@ -1,0 +1,43 @@
+;!FILE timer_manager.asm
+XL2
+H 9 areas 11 global symbols
+M timer_manager
+O -mz80
+S .__.ABS. Def0000
+A _CODE size C flags 0 addr 0
+S C$timer_manager.c$10$1$1 Def000B
+S XG$screen_bases_screen_init$0$0 Def000B
+S A$timer_manager$63 Def0000
+S A$timer_manager$64 Def0003
+S A$timer_manager$74 Def000B
+S A$timer_manager$68 Def0005
+S A$timer_manager$69 Def0008
+S C$timer_manager.c$6$0$0 Def0000
+S C$timer_manager.c$8$1$1 Def0000
+S C$timer_manager.c$9$1$1 Def0005
+S G$screen_bases_screen_init$0$0 Def0000
+S _screen_bases_screen_init Def0000
+A _DATA size 3 flags 0 addr 0
+S G$screen_bases_screen_timer$0$0 Def0001
+S G$screen_bases_screen_count$0$0 Def0000
+S _screen_bases_screen_timer Def0001
+S _screen_bases_screen_count Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 00 21 00 00 22 01 00 C9
+R 00 00 00 00 00 03 01 00 00 0B 01 00

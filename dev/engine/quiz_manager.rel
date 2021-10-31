@@ -1,0 +1,1837 @@
+;!FILE quiz_manager.asm
+XL2
+H 9 areas 57F global symbols
+M quiz_manager
+O -mz80
+S _bank2_opt1_line1 Ref0000
+S _bank2_soln Ref0000
+S _bank3_opt1_line1 Ref0000
+S _bank2_opt2_line1 Ref0000
+S _bank2_opt1_line2 Ref0000
+S _bank3_soln Ref0000
+S _engine_font_manager_text Ref0000
+S _bank4_opt1_line1 Ref0000
+S _bank3_opt2_line1 Ref0000
+S _bank3_opt1_line2 Ref0000
+S _bank2_opt3_line1 Ref0000
+S _bank2_opt2_line2 Ref0000
+S _bank2_opt1_line3 Ref0000
+S _bank4_soln Ref0000
+S _bank5_opt1_line1 Ref0000
+S _bank4_opt2_line1 Ref0000
+S _bank4_opt1_line2 Ref0000
+S _bank3_opt3_line1 Ref0000
+S _bank3_opt2_line2 Ref0000
+S _bank3_opt1_line3 Ref0000
+S _bank2_opt4_line1 Ref0000
+S _bank2_opt3_line2 Ref0000
+S _bank2_opt2_line3 Ref0000
+S _bank5_soln Ref0000
+S _bank5_opt2_line1 Ref0000
+S _bank5_opt1_line2 Ref0000
+S _bank4_opt3_line1 Ref0000
+S _bank4_opt2_line2 Ref0000
+S _bank4_opt1_line3 Ref0000
+S _bank3_opt4_line1 Ref0000
+S _bank3_opt3_line2 Ref0000
+S _bank3_opt2_line3 Ref0000
+S _bank2_opt4_line2 Ref0000
+S _bank2_opt3_line3 Ref0000
+S _bank5_opt3_line1 Ref0000
+S _bank5_opt2_line2 Ref0000
+S _bank5_opt1_line3 Ref0000
+S _bank4_opt4_line1 Ref0000
+S _bank4_opt3_line2 Ref0000
+S _bank4_opt2_line3 Ref0000
+S _bank3_opt4_line2 Ref0000
+S _bank3_opt3_line3 Ref0000
+S _bank2_opt4_line3 Ref0000
+S _bank2_quiz_line1 Ref0000
+S _bank5_opt4_line1 Ref0000
+S _bank5_opt3_line2 Ref0000
+S _bank5_opt2_line3 Ref0000
+S _bank4_opt4_line2 Ref0000
+S _bank4_opt3_line3 Ref0000
+S _bank3_opt4_line3 Ref0000
+S _bank3_quiz_line1 Ref0000
+S _bank2_quiz_line2 Ref0000
+S _local_cheat Ref0000
+S _select_diff_option Ref0000
+S _bank5_opt4_line2 Ref0000
+S _bank5_opt3_line3 Ref0000
+S _bank4_opt4_line3 Ref0000
+S _bank4_quiz_line1 Ref0000
+S _bank3_quiz_line2 Ref0000
+S _bank2_quiz_line3 Ref0000
+S _bank5_opt4_line3 Ref0000
+S _bank5_quiz_line1 Ref0000
+S _bank4_quiz_line2 Ref0000
+S _bank3_quiz_line3 Ref0000
+S _hacker_extra Ref0000
+S _bank5_quiz_line2 Ref0000
+S _bank4_quiz_line3 Ref0000
+S _bank5_quiz_line3 Ref0000
+S _diff_select Ref0000
+S .__.ABS. Def0000
+S _engine_font_manager_data_ZERO Ref0000
+S _devkit_SMS_mapROMBank Ref0000
+A _CODE size 746 flags 0 addr 0
+S Fquiz_manager$__str_5$0$0 Def017A
+S Fquiz_manager$__str_6$0$0 Def0742
+S G$engine_quiz_manager_cheat2$0$0 Def013C
+S Fquiz_manager$__str_7$0$0 Def0744
+S XG$engine_quiz_manager_load$0$0 Def06E8
+S _engine_quiz_manager_init Def0000
+S A$quiz_manager$1000 Def03B0
+S _engine_quiz_manager_cheat2 Def013C
+S A$quiz_manager$1010 Def03BD
+S A$quiz_manager$1001 Def03B3
+S Fquiz_manager$show_diff$0$0 Def06E9
+S A$quiz_manager$1200 Def04A9
+S A$quiz_manager$1110 Def043A
+S A$quiz_manager$1011 Def03BE
+S A$quiz_manager$1002 Def03B4
+S G$engine_quiz_manager_cheat$0$0 Def00F1
+S A$quiz_manager$1210 Def04B7
+S A$quiz_manager$1201 Def04AA
+S A$quiz_manager$1120 Def0445
+S A$quiz_manager$1111 Def043B
+S A$quiz_manager$1030 Def03D5
+S A$quiz_manager$1012 Def03BF
+S A$quiz_manager$1003 Def03B5
+S A$quiz_manager$1400 Def05A5
+S A$quiz_manager$1310 Def0536
+S A$quiz_manager$1301 Def0526
+S A$quiz_manager$1220 Def04C1
+S A$quiz_manager$1211 Def04B9
+S A$quiz_manager$1202 Def04AB
+S A$quiz_manager$1130 Def0454
+S A$quiz_manager$1121 Def0446
+S A$quiz_manager$1112 Def043C
+S A$quiz_manager$1103 Def042E
+S A$quiz_manager$1040 Def03DF
+S A$quiz_manager$1031 Def03D7
+S A$quiz_manager$1013 Def03C0
+S C$quiz_manager.c$200$2$60 Def04EA
+S A$quiz_manager$1500 Def0621
+S A$quiz_manager$1410 Def05B1
+S A$quiz_manager$1320 Def0541
+S A$quiz_manager$1311 Def0537
+S A$quiz_manager$1302 Def0529
+S A$quiz_manager$1230 Def04D2
+S A$quiz_manager$1221 Def04C4
+S A$quiz_manager$1212 Def04BA
+S A$quiz_manager$1203 Def04AC
+S A$quiz_manager$1131 Def0455
+S A$quiz_manager$1122 Def0447
+S A$quiz_manager$1113 Def043F
+S A$quiz_manager$1104 Def0431
+S A$quiz_manager$1050 Def03F0
+S A$quiz_manager$1041 Def03E2
+S A$quiz_manager$1032 Def03D8
+S A$quiz_manager$1023 Def03CA
+S A$quiz_manager$1014 Def03C2
+S C$quiz_manager.c$210$2$60 Def0562
+S C$quiz_manager.c$201$2$60 Def04FD
+S A$quiz_manager$1600 Def069F
+S A$quiz_manager$1510 Def0630
+S A$quiz_manager$1501 Def0624
+S A$quiz_manager$1420 Def05BD
+S A$quiz_manager$1411 Def05B2
+S A$quiz_manager$1321 Def0542
+S A$quiz_manager$1312 Def0538
+S A$quiz_manager$1303 Def052A
+S A$quiz_manager$1240 Def04DD
+S A$quiz_manager$1231 Def04D3
+S A$quiz_manager$1222 Def04C5
+S A$quiz_manager$1213 Def04BB
+S A$quiz_manager$1204 Def04AD
+S A$quiz_manager$1150 Def046B
+S A$quiz_manager$1132 Def0456
+S A$quiz_manager$1123 Def044A
+S A$quiz_manager$1114 Def0440
+S A$quiz_manager$1105 Def0432
+S A$quiz_manager$1060 Def03FB
+S A$quiz_manager$1051 Def03F1
+S A$quiz_manager$1042 Def03E3
+S A$quiz_manager$1033 Def03D9
+S A$quiz_manager$1024 Def03CD
+S A$quiz_manager$1015 Def03C3
+S C$quiz_manager.c$211$2$60 Def0575
+S C$quiz_manager.c$202$2$60 Def0511
+S C$quiz_manager.c$103$1$52 Def013C
+S A$quiz_manager$1700 Def070D
+S A$quiz_manager$1610 Def06A9
+S A$quiz_manager$1601 Def06A1
+S A$quiz_manager$1520 Def063C
+S A$quiz_manager$1502 Def0625
+S A$quiz_manager$1421 Def05BE
+S A$quiz_manager$1412 Def05B3
+S A$quiz_manager$1340 Def055A
+S A$quiz_manager$1322 Def0543
+S A$quiz_manager$1304 Def052B
+S A$quiz_manager$1241 Def04DE
+S A$quiz_manager$1232 Def04D4
+S A$quiz_manager$1223 Def04C8
+S A$quiz_manager$1214 Def04BE
+S A$quiz_manager$1205 Def04AE
+S A$quiz_manager$1160 Def0477
+S A$quiz_manager$1151 Def046C
+S A$quiz_manager$1124 Def044B
+S A$quiz_manager$1115 Def0441
+S A$quiz_manager$1106 Def0435
+S A$quiz_manager$1061 Def03FC
+S A$quiz_manager$1043 Def03E4
+S A$quiz_manager$1034 Def03DC
+S A$quiz_manager$1025 Def03CE
+S A$quiz_manager$1016 Def03C4
+S A$quiz_manager$1007 Def03B6
+S C$quiz_manager.c$212$2$60 Def0589
+S C$quiz_manager.c$100$1$47 Def013C
+S A$quiz_manager$1701 Def0710
+S A$quiz_manager$1620 Def06BA
+S A$quiz_manager$1611 Def06AC
+S A$quiz_manager$1602 Def06A2
+S A$quiz_manager$1530 Def0647
+S A$quiz_manager$1521 Def063D
+S A$quiz_manager$1503 Def0626
+S A$quiz_manager$1440 Def05D8
+S A$quiz_manager$1431 Def05C9
+S A$quiz_manager$1422 Def05C1
+S A$quiz_manager$1413 Def05B4
+S A$quiz_manager$1404 Def05A8
+S A$quiz_manager$1350 Def0565
+S A$quiz_manager$1341 Def055B
+S A$quiz_manager$1332 Def054D
+S A$quiz_manager$1323 Def0545
+S A$quiz_manager$1305 Def052C
+S A$quiz_manager$1260 Def04F6
+S A$quiz_manager$1242 Def04DF
+S A$quiz_manager$1224 Def04C9
+S A$quiz_manager$1215 Def04BF
+S A$quiz_manager$1206 Def04B1
+S A$quiz_manager$1170 Def0482
+S A$quiz_manager$1161 Def047A
+S A$quiz_manager$1152 Def046D
+S A$quiz_manager$1143 Def0461
+S A$quiz_manager$1125 Def044C
+S A$quiz_manager$1107 Def0436
+S A$quiz_manager$1080 Def0414
+S A$quiz_manager$1071 Def0406
+S A$quiz_manager$1062 Def03FE
+S A$quiz_manager$1044 Def03E5
+S A$quiz_manager$1035 Def03DD
+S A$quiz_manager$1026 Def03CF
+S A$quiz_manager$1017 Def03C7
+S A$quiz_manager$1008 Def03B9
+S A$quiz_manager$1720 Def072A
+S A$quiz_manager$1702 Def0711
+S A$quiz_manager$1630 Def06C5
+S A$quiz_manager$1621 Def06BB
+S A$quiz_manager$1612 Def06AD
+S A$quiz_manager$1603 Def06A3
+S A$quiz_manager$1540 Def0656
+S A$quiz_manager$1531 Def0648
+S A$quiz_manager$1522 Def063E
+S A$quiz_manager$1504 Def0627
+S A$quiz_manager$1450 Def05E5
+S A$quiz_manager$1432 Def05CC
+S A$quiz_manager$1423 Def05C2
+S A$quiz_manager$1414 Def05B5
+S A$quiz_manager$1405 Def05AB
+S A$quiz_manager$1360 Def0574
+S A$quiz_manager$1351 Def0566
+S A$quiz_manager$1342 Def055C
+S A$quiz_manager$1333 Def0550
+S A$quiz_manager$1324 Def0546
+S A$quiz_manager$1306 Def052F
+S A$quiz_manager$1270 Def0501
+S A$quiz_manager$1261 Def04F7
+S A$quiz_manager$1243 Def04E0
+S A$quiz_manager$1225 Def04CA
+S A$quiz_manager$1216 Def04C0
+S A$quiz_manager$1207 Def04B2
+S A$quiz_manager$1171 Def0485
+S A$quiz_manager$1162 Def047B
+S A$quiz_manager$1153 Def046E
+S A$quiz_manager$1144 Def0464
+S A$quiz_manager$1126 Def044D
+S A$quiz_manager$1108 Def0437
+S A$quiz_manager$1090 Def041F
+S A$quiz_manager$1081 Def0415
+S A$quiz_manager$1072 Def0409
+S A$quiz_manager$1063 Def03FF
+S A$quiz_manager$1045 Def03E8
+S A$quiz_manager$1036 Def03DE
+S A$quiz_manager$1027 Def03D2
+S A$quiz_manager$1018 Def03C8
+S A$quiz_manager$1009 Def03BA
+S C$quiz_manager.c$222$2$61 Def05E7
+S C$quiz_manager.c$205$2$60 Def0526
+S C$quiz_manager.c$115$1$52 Def0177
+S XG$engine_quiz_manager_init$0$0 Def0014
+S A$quiz_manager$1730 Def0738
+S A$quiz_manager$1721 Def072B
+S A$quiz_manager$1703 Def0712
+S A$quiz_manager$1631 Def06C6
+S A$quiz_manager$1613 Def06AE
+S A$quiz_manager$1604 Def06A6
+S A$quiz_manager$1550 Def0661
+S A$quiz_manager$1541 Def0657
+S A$quiz_manager$1532 Def064B
+S A$quiz_manager$1523 Def0641
+S A$quiz_manager$1514 Def0631
+S A$quiz_manager$1505 Def0629
+S A$quiz_manager$1460 Def05EF
+S A$quiz_manager$1451 Def05E6
+S A$quiz_manager$1433 Def05CD
+S A$quiz_manager$1424 Def05C3
+S A$quiz_manager$1415 Def05B6
+S A$quiz_manager$1406 Def05AD
+S A$quiz_manager$1370 Def057F
+S A$quiz_manager$1352 Def0567
+S A$quiz_manager$1343 Def055F
+S A$quiz_manager$1334 Def0551
+S A$quiz_manager$1325 Def0547
+S A$quiz_manager$1316 Def0539
+S A$quiz_manager$1307 Def0531
+S A$quiz_manager$1280 Def0510
+S A$quiz_manager$1271 Def0504
+S A$quiz_manager$1262 Def04FA
+S A$quiz_manager$1253 Def04EA
+S A$quiz_manager$1244 Def04E2
+S A$quiz_manager$1226 Def04CB
+S A$quiz_manager$1208 Def04B3
+S A$quiz_manager$1190 Def049F
+S A$quiz_manager$1172 Def0486
+S A$quiz_manager$1163 Def047C
+S A$quiz_manager$1154 Def046F
+S A$quiz_manager$1145 Def0466
+S A$quiz_manager$1127 Def044F
+S A$quiz_manager$1109 Def0438
+S A$quiz_manager$1091 Def0420
+S A$quiz_manager$1082 Def0418
+S A$quiz_manager$1073 Def040A
+S A$quiz_manager$1064 Def0400
+S A$quiz_manager$1055 Def03F2
+S A$quiz_manager$1046 Def03EA
+S A$quiz_manager$1028 Def03D3
+S A$quiz_manager$1019 Def03C9
+S C$quiz_manager.c$232$2$61 Def066D
+S C$quiz_manager.c$223$2$61 Def0608
+S C$quiz_manager.c$206$2$60 Def0539
+S C$quiz_manager.c$105$2$53 Def0141
+S G$engine_quiz_manager_base2$0$0 Def0052
+S A$quiz_manager$1731 Def0739
+S A$quiz_manager$1722 Def072C
+S A$quiz_manager$1713 Def071D
+S A$quiz_manager$1704 Def0713
+S A$quiz_manager$1650 Def06DE
+S A$quiz_manager$1641 Def06D0
+S A$quiz_manager$1632 Def06C8
+S A$quiz_manager$1614 Def06AF
+S A$quiz_manager$1605 Def06A7
+S A$quiz_manager$1551 Def0662
+S A$quiz_manager$1533 Def064C
+S A$quiz_manager$1524 Def0642
+S A$quiz_manager$1515 Def0634
+S A$quiz_manager$1506 Def062A
+S A$quiz_manager$1470 Def05FB
+S A$quiz_manager$1461 Def05F0
+S A$quiz_manager$1434 Def05CE
+S A$quiz_manager$1425 Def05C6
+S A$quiz_manager$1416 Def05B7
+S A$quiz_manager$1407 Def05AE
+S A$quiz_manager$1380 Def0589
+S A$quiz_manager$1371 Def0581
+S A$quiz_manager$1353 Def0568
+S A$quiz_manager$1344 Def0560
+S A$quiz_manager$1335 Def0552
+S A$quiz_manager$1326 Def054A
+S A$quiz_manager$1317 Def053C
+S A$quiz_manager$1308 Def0532
+S A$quiz_manager$1290 Def051B
+S A$quiz_manager$1272 Def0505
+S A$quiz_manager$1263 Def04FB
+S A$quiz_manager$1254 Def04ED
+S A$quiz_manager$1245 Def04E3
+S A$quiz_manager$1236 Def04D5
+S A$quiz_manager$1227 Def04CD
+S A$quiz_manager$1209 Def04B4
+S A$quiz_manager$1173 Def0487
+S A$quiz_manager$1164 Def047F
+S A$quiz_manager$1155 Def0470
+S A$quiz_manager$1146 Def0467
+S A$quiz_manager$1137 Def0459
+S A$quiz_manager$1128 Def0450
+S A$quiz_manager$1119 Def0442
+S A$quiz_manager$1092 Def0421
+S A$quiz_manager$1083 Def0419
+S A$quiz_manager$1074 Def040B
+S A$quiz_manager$1065 Def0403
+S A$quiz_manager$1056 Def03F5
+S A$quiz_manager$1047 Def03EB
+S A$quiz_manager$1029 Def03D4
+S C$quiz_manager.c$233$2$61 Def0680
+S C$quiz_manager.c$224$2$61 Def061C
+S C$quiz_manager.c$207$2$60 Def054D
+S C$quiz_manager.c$130$1$57 Def01C1
+S C$quiz_manager.c$117$1$52 Def017C
+S C$quiz_manager.c$112$3$55 Def0168
+S C$quiz_manager.c$106$2$53 Def0150
+S G$engine_quiz_manager_base3$0$0 Def005B
+S A$quiz_manager$1741 Def0741
+S A$quiz_manager$1732 Def073A
+S A$quiz_manager$1723 Def072F
+S A$quiz_manager$1714 Def0720
+S A$quiz_manager$1705 Def0714
+S A$quiz_manager$1651 Def06DF
+S A$quiz_manager$1642 Def06D3
+S A$quiz_manager$1633 Def06C9
+S A$quiz_manager$1615 Def06B2
+S A$quiz_manager$1606 Def06A8
+S A$quiz_manager$1570 Def067A
+S A$quiz_manager$1552 Def0663
+S A$quiz_manager$1534 Def064D
+S A$quiz_manager$1525 Def0643
+S A$quiz_manager$1516 Def0635
+S A$quiz_manager$1507 Def062B
+S A$quiz_manager$1471 Def05FE
+S A$quiz_manager$1462 Def05F1
+S A$quiz_manager$1444 Def05D9
+S A$quiz_manager$1435 Def05D1
+S A$quiz_manager$1426 Def05C7
+S A$quiz_manager$1417 Def05B8
+S A$quiz_manager$1408 Def05AF
+S A$quiz_manager$1390 Def0598
+S A$quiz_manager$1381 Def058C
+S A$quiz_manager$1372 Def0582
+S A$quiz_manager$1354 Def056B
+S A$quiz_manager$1345 Def0561
+S A$quiz_manager$1336 Def0555
+S A$quiz_manager$1327 Def054B
+S A$quiz_manager$1318 Def053D
+S A$quiz_manager$1309 Def0533
+S A$quiz_manager$1291 Def051C
+S A$quiz_manager$1273 Def0506
+S A$quiz_manager$1264 Def04FC
+S A$quiz_manager$1255 Def04EE
+S A$quiz_manager$1246 Def04E4
+S A$quiz_manager$1237 Def04D8
+S A$quiz_manager$1228 Def04CE
+S A$quiz_manager$1183 Def0492
+S A$quiz_manager$1174 Def048A
+S A$quiz_manager$1165 Def0480
+S A$quiz_manager$1156 Def0471
+S A$quiz_manager$1147 Def0468
+S A$quiz_manager$1138 Def045C
+S A$quiz_manager$1129 Def0451
+S A$quiz_manager$1093 Def0424
+S A$quiz_manager$1084 Def041A
+S A$quiz_manager$1075 Def040E
+S A$quiz_manager$1066 Def0404
+S A$quiz_manager$1057 Def03F6
+S A$quiz_manager$1048 Def03EC
+S C$quiz_manager.c$251$1$63 Def06F7
+S C$quiz_manager.c$234$2$61 Def0694
+S C$quiz_manager.c$190$2$60 Def0461
+S C$quiz_manager.c$131$1$57 Def01C7
+S C$quiz_manager.c$122$1$57 Def0186
+S XG$engine_quiz_manager_cheat2$0$0 Def0177
+S A$quiz_manager$1733 Def073D
+S A$quiz_manager$1724 Def0730
+S A$quiz_manager$1715 Def0721
+S A$quiz_manager$1706 Def0717
+S A$quiz_manager$1661 Def06E8
+S A$quiz_manager$1652 Def06E2
+S A$quiz_manager$1643 Def06D4
+S A$quiz_manager$1634 Def06CA
+S A$quiz_manager$1625 Def06BC
+S A$quiz_manager$1616 Def06B4
+S A$quiz_manager$1580 Def0687
+S A$quiz_manager$1571 Def067D
+S A$quiz_manager$1562 Def066D
+S A$quiz_manager$1553 Def0665
+S A$quiz_manager$1535 Def064E
+S A$quiz_manager$1517 Def0636
+S A$quiz_manager$1508 Def062E
+S A$quiz_manager$1490 Def0616
+S A$quiz_manager$1481 Def0608
+S A$quiz_manager$1472 Def0600
+S A$quiz_manager$1463 Def05F2
+S A$quiz_manager$1445 Def05DC
+S A$quiz_manager$1436 Def05D2
+S A$quiz_manager$1427 Def05C8
+S A$quiz_manager$1418 Def05B9
+S A$quiz_manager$1409 Def05B0
+S A$quiz_manager$1391 Def059B
+S A$quiz_manager$1382 Def058D
+S A$quiz_manager$1373 Def0583
+S A$quiz_manager$1364 Def0575
+S A$quiz_manager$1355 Def056D
+S A$quiz_manager$1337 Def0556
+S A$quiz_manager$1328 Def054C
+S A$quiz_manager$1319 Def0540
+S A$quiz_manager$1292 Def051E
+S A$quiz_manager$1274 Def0507
+S A$quiz_manager$1256 Def04EF
+S A$quiz_manager$1247 Def04E7
+S A$quiz_manager$1238 Def04D9
+S A$quiz_manager$1229 Def04CF
+S A$quiz_manager$1184 Def0495
+S A$quiz_manager$1175 Def048B
+S A$quiz_manager$1166 Def0481
+S A$quiz_manager$1157 Def0472
+S A$quiz_manager$1148 Def0469
+S A$quiz_manager$1139 Def045E
+S A$quiz_manager$1094 Def0426
+S A$quiz_manager$1076 Def040F
+S A$quiz_manager$1067 Def0405
+S A$quiz_manager$1058 Def03F9
+S A$quiz_manager$1049 Def03EF
+S C$quiz_manager.c$252$1$63 Def0707
+S C$quiz_manager.c$217$2$61 Def05A8
+S C$quiz_manager.c$191$2$60 Def0482
+S C$quiz_manager.c$123$1$57 Def0193
+S G$engine_quiz_manager_answer$0$0 Def0074
+S A$quiz_manager$1734 Def073E
+S A$quiz_manager$1725 Def0731
+S A$quiz_manager$1716 Def0725
+S A$quiz_manager$1707 Def0718
+S A$quiz_manager$1671 Def06E9
+S A$quiz_manager$1653 Def06E3
+S A$quiz_manager$1644 Def06D5
+S A$quiz_manager$1635 Def06CD
+S A$quiz_manager$1626 Def06BF
+S A$quiz_manager$1617 Def06B5
+S A$quiz_manager$1581 Def0688
+S A$quiz_manager$1572 Def067E
+S A$quiz_manager$1563 Def0670
+S A$quiz_manager$1554 Def0666
+S A$quiz_manager$1545 Def0658
+S A$quiz_manager$1536 Def0650
+S A$quiz_manager$1518 Def0637
+S A$quiz_manager$1509 Def062F
+S A$quiz_manager$1491 Def0619
+S A$quiz_manager$1482 Def060B
+S A$quiz_manager$1473 Def0601
+S A$quiz_manager$1464 Def05F3
+S A$quiz_manager$1455 Def05E7
+S A$quiz_manager$1446 Def05DD
+S A$quiz_manager$1437 Def05D3
+S A$quiz_manager$1419 Def05BC
+S A$quiz_manager$1392 Def059C
+S A$quiz_manager$1383 Def058E
+S A$quiz_manager$1374 Def0586
+S A$quiz_manager$1365 Def0578
+S A$quiz_manager$1356 Def056E
+S A$quiz_manager$1338 Def0557
+S A$quiz_manager$1293 Def051F
+S A$quiz_manager$1284 Def0511
+S A$quiz_manager$1275 Def0509
+S A$quiz_manager$1257 Def04F0
+S A$quiz_manager$1248 Def04E8
+S A$quiz_manager$1239 Def04DA
+S A$quiz_manager$1194 Def04A0
+S A$quiz_manager$1185 Def0496
+S A$quiz_manager$1176 Def048C
+S A$quiz_manager$1158 Def0475
+S A$quiz_manager$1149 Def046A
+S A$quiz_manager$1095 Def0427
+S A$quiz_manager$1077 Def0410
+S A$quiz_manager$1059 Def03FA
+S C$quiz_manager.c$253$1$63 Def071D
+S C$quiz_manager.c$241$1$57 Def06E8
+S C$quiz_manager.c$227$2$61 Def0631
+S C$quiz_manager.c$218$2$61 Def05C9
+S C$quiz_manager.c$214$1$57 Def05A0
+S C$quiz_manager.c$192$2$60 Def0492
+S C$quiz_manager.c$160$1$57 Def0313
+S C$quiz_manager.c$133$1$57 Def01CD
+S C$quiz_manager.c$124$1$57 Def019D
+S _engine_quiz_manager_cheat Def00F1
+S A$quiz_manager$1726 Def0732
+S A$quiz_manager$1717 Def0727
+S A$quiz_manager$1708 Def071B
+S A$quiz_manager$1690 Def0701
+S A$quiz_manager$1672 Def06EB
+S A$quiz_manager$1645 Def06D8
+S A$quiz_manager$1636 Def06CE
+S A$quiz_manager$1627 Def06C0
+S A$quiz_manager$1618 Def06B6
+S A$quiz_manager$1582 Def0689
+S A$quiz_manager$1573 Def067F
+S A$quiz_manager$1564 Def0671
+S A$quiz_manager$1555 Def0667
+S A$quiz_manager$1546 Def065B
+S A$quiz_manager$1537 Def0651
+S A$quiz_manager$1519 Def063A
+S A$quiz_manager$1492 Def061A
+S A$quiz_manager$1483 Def060C
+S A$quiz_manager$1474 Def0602
+S A$quiz_manager$1465 Def05F4
+S A$quiz_manager$1456 Def05EA
+S A$quiz_manager$1447 Def05E0
+S A$quiz_manager$1438 Def05D6
+S A$quiz_manager$1393 Def059D
+S A$quiz_manager$1384 Def0591
+S A$quiz_manager$1375 Def0587
+S A$quiz_manager$1366 Def0579
+S A$quiz_manager$1357 Def056F
+S A$quiz_manager$1339 Def0558
+S A$quiz_manager$1294 Def0520
+S A$quiz_manager$1285 Def0514
+S A$quiz_manager$1276 Def050A
+S A$quiz_manager$1258 Def04F3
+S A$quiz_manager$1249 Def04E9
+S A$quiz_manager$1195 Def04A3
+S A$quiz_manager$1186 Def0499
+S A$quiz_manager$1177 Def048F
+S A$quiz_manager$1159 Def0476
+S A$quiz_manager$1096 Def0428
+S A$quiz_manager$1078 Def0411
+S C$quiz_manager.c$254$1$63 Def0741
+S C$quiz_manager.c$245$1$63 Def06F1
+S C$quiz_manager.c$237$2$61 Def06A9
+S C$quiz_manager.c$228$2$61 Def0644
+S C$quiz_manager.c$219$2$61 Def05D9
+S C$quiz_manager.c$141$2$58 Def0213
+S C$quiz_manager.c$125$1$57 Def01A7
+S C$quiz_manager.c$108$3$54 Def0158
+S A$quiz_manager$1736 Def073F
+S A$quiz_manager$1727 Def0735
+S A$quiz_manager$1718 Def0728
+S A$quiz_manager$1709 Def071C
+S A$quiz_manager$1691 Def0702
+S A$quiz_manager$1682 Def06F5
+S A$quiz_manager$1673 Def06EF
+S A$quiz_manager$1655 Def06E4
+S A$quiz_manager$1646 Def06D9
+S A$quiz_manager$1637 Def06CF
+S A$quiz_manager$1628 Def06C3
+S A$quiz_manager$1619 Def06B9
+S A$quiz_manager$1583 Def068A
+S A$quiz_manager$1565 Def0672
+S A$quiz_manager$1556 Def066A
+S A$quiz_manager$1547 Def065C
+S A$quiz_manager$1538 Def0652
+S A$quiz_manager$1529 Def0644
+S A$quiz_manager$1493 Def061B
+S A$quiz_manager$1484 Def060F
+S A$quiz_manager$1475 Def0605
+S A$quiz_manager$1466 Def05F5
+S A$quiz_manager$1457 Def05EC
+S A$quiz_manager$1448 Def05E1
+S A$quiz_manager$1439 Def05D7
+S A$quiz_manager$1385 Def0592
+S A$quiz_manager$1376 Def0588
+S A$quiz_manager$1367 Def057C
+S A$quiz_manager$1358 Def0572
+S A$quiz_manager$1349 Def0562
+S A$quiz_manager$1295 Def0523
+S A$quiz_manager$1286 Def0515
+S A$quiz_manager$1277 Def050B
+S A$quiz_manager$1268 Def04FD
+S A$quiz_manager$1259 Def04F5
+S A$quiz_manager$1196 Def04A5
+S A$quiz_manager$1187 Def049A
+S A$quiz_manager$1178 Def0490
+S A$quiz_manager$1097 Def042B
+S A$quiz_manager$1088 Def041B
+S A$quiz_manager$1079 Def0413
+S C$quiz_manager.c$243$1$57 Def06E9
+S C$quiz_manager.c$238$2$61 Def06BC
+S C$quiz_manager.c$229$2$61 Def0658
+S C$quiz_manager.c$151$2$58 Def0299
+S C$quiz_manager.c$142$2$58 Def0234
+S A$quiz_manager$1728 Def0736
+S A$quiz_manager$1719 Def0729
+S A$quiz_manager$1692 Def0705
+S A$quiz_manager$1656 Def06E6
+S A$quiz_manager$1647 Def06DA
+S A$quiz_manager$1629 Def06C4
+S A$quiz_manager$1593 Def0694
+S A$quiz_manager$1584 Def068C
+S A$quiz_manager$1566 Def0673
+S A$quiz_manager$1557 Def066B
+S A$quiz_manager$1548 Def065D
+S A$quiz_manager$1539 Def0655
+S A$quiz_manager$1485 Def0610
+S A$quiz_manager$1476 Def0606
+S A$quiz_manager$1467 Def05F8
+S A$quiz_manager$1458 Def05ED
+S A$quiz_manager$1449 Def05E2
+S A$quiz_manager$1386 Def0593
+S A$quiz_manager$1368 Def057D
+S A$quiz_manager$1359 Def0573
+S A$quiz_manager$1296 Def0524
+S A$quiz_manager$1287 Def0516
+S A$quiz_manager$1278 Def050E
+S A$quiz_manager$1269 Def0500
+S A$quiz_manager$1197 Def04A6
+S A$quiz_manager$1188 Def049B
+S A$quiz_manager$1179 Def0491
+S A$quiz_manager$1098 Def042C
+S A$quiz_manager$1089 Def041E
+S C$quiz_manager.c$239$2$61 Def06D0
+S C$quiz_manager.c$195$2$60 Def04A0
+S C$quiz_manager.c$152$2$58 Def02AC
+S C$quiz_manager.c$143$2$58 Def0248
+S A$quiz_manager$1729 Def0737
+S A$quiz_manager$1693 Def0706
+S A$quiz_manager$1648 Def06DB
+S A$quiz_manager$1594 Def0697
+S A$quiz_manager$1585 Def068D
+S A$quiz_manager$1567 Def0676
+S A$quiz_manager$1558 Def066C
+S A$quiz_manager$1549 Def0660
+S A$quiz_manager$1486 Def0611
+S A$quiz_manager$1477 Def0607
+S A$quiz_manager$1468 Def05F9
+S A$quiz_manager$1459 Def05EE
+S A$quiz_manager$1387 Def0594
+S A$quiz_manager$1369 Def057E
+S A$quiz_manager$1297 Def0525
+S A$quiz_manager$1288 Def0519
+S A$quiz_manager$1279 Def050F
+S A$quiz_manager$1198 Def04A7
+S A$quiz_manager$1189 Def049E
+S A$quiz_manager$1099 Def042D
+S C$quiz_manager.c$196$2$60 Def04C1
+S C$quiz_manager.c$170$2$59 Def038E
+S C$quiz_manager.c$153$2$58 Def02C0
+S C$quiz_manager.c$128$1$57 Def01B1
+S A$quiz_manager$1649 Def06DD
+S A$quiz_manager$1595 Def0698
+S A$quiz_manager$1586 Def068E
+S A$quiz_manager$1577 Def0680
+S A$quiz_manager$1568 Def0678
+S A$quiz_manager$1487 Def0612
+S A$quiz_manager$1469 Def05FA
+S A$quiz_manager$1388 Def0596
+S A$quiz_manager$1289 Def051A
+S A$quiz_manager$1199 Def04A8
+S A$quiz_manager$310 Def009F
+S A$quiz_manager$301 Def0091
+S A$quiz_manager$220 Def005A
+S C$quiz_manager.c$247$2$64 Def06F5
+S C$quiz_manager.c$197$2$60 Def04D5
+S C$quiz_manager.c$180$2$59 Def0406
+S C$quiz_manager.c$136$2$58 Def01D4
+S C$quiz_manager.c$30$1$32 Def0005
+S A$quiz_manager$1686 Def06F7
+S A$quiz_manager$1677 Def06F1
+S A$quiz_manager$1596 Def0699
+S A$quiz_manager$1587 Def0691
+S A$quiz_manager$1578 Def0683
+S A$quiz_manager$1569 Def0679
+S A$quiz_manager$1497 Def061C
+S A$quiz_manager$1488 Def0614
+S A$quiz_manager$1398 Def05A0
+S A$quiz_manager$1389 Def0597
+S A$quiz_manager$410 Def010F
+S A$quiz_manager$320 Def00AB
+S A$quiz_manager$311 Def00A0
+S A$quiz_manager$302 Def0094
+S A$quiz_manager$212 Def0052
+S C$quiz_manager.c$163$2$59 Def031A
+S C$quiz_manager.c$146$2$58 Def025D
+S C$quiz_manager.c$137$2$58 Def01F5
+S C$quiz_manager.c$31$1$32 Def000A
+S A$quiz_manager$1687 Def06FA
+S A$quiz_manager$1678 Def06F4
+S A$quiz_manager$1597 Def069C
+S A$quiz_manager$1588 Def0692
+S A$quiz_manager$1579 Def0684
+S A$quiz_manager$1498 Def061F
+S A$quiz_manager$1489 Def0615
+S A$quiz_manager$1399 Def05A3
+S A$quiz_manager$510 Def0166
+S A$quiz_manager$501 Def0158
+S A$quiz_manager$420 Def0117
+S A$quiz_manager$411 Def0110
+S A$quiz_manager$330 Def00BA
+S A$quiz_manager$312 Def00A1
+S A$quiz_manager$303 Def0095
+S A$quiz_manager$213 Def0055
+S A$quiz_manager$123 Def0005
+S C$quiz_manager.c$173$2$59 Def03A3
+S C$quiz_manager.c$164$2$59 Def033B
+S C$quiz_manager.c$156$2$58 Def02D5
+S C$quiz_manager.c$147$2$58 Def0270
+S C$quiz_manager.c$138$2$58 Def0205
+S C$quiz_manager.c$32$1$32 Def000F
+S A$quiz_manager$1697 Def0707
+S A$quiz_manager$1688 Def06FD
+S A$quiz_manager$1598 Def069D
+S A$quiz_manager$1589 Def0693
+S A$quiz_manager$1499 Def0620
+S A$quiz_manager$700 Def0238
+S A$quiz_manager$610 Def01C9
+S A$quiz_manager$601 Def01C1
+S A$quiz_manager$520 Def016D
+S A$quiz_manager$511 Def0167
+S A$quiz_manager$502 Def0159
+S A$quiz_manager$430 Def011F
+S A$quiz_manager$412 Def0111
+S A$quiz_manager$403 Def0103
+S A$quiz_manager$313 Def00A4
+S A$quiz_manager$214 Def0056
+S A$quiz_manager$133 Def000F
+S A$quiz_manager$124 Def0008
+S C$quiz_manager.c$183$2$59 Def041B
+S C$quiz_manager.c$174$2$59 Def03B6
+S C$quiz_manager.c$165$2$59 Def034B
+S C$quiz_manager.c$157$2$58 Def02E8
+S C$quiz_manager.c$148$2$58 Def0284
+S C$quiz_manager.c$33$1$32 Def0014
+S _engine_quiz_manager_base2 Def0052
+S A$quiz_manager$1698 Def070A
+S A$quiz_manager$1689 Def06FE
+S A$quiz_manager$1599 Def069E
+S A$quiz_manager$800 Def02B6
+S A$quiz_manager$710 Def0247
+S A$quiz_manager$701 Def023B
+S A$quiz_manager$611 Def01CC
+S A$quiz_manager$602 Def01C4
+S A$quiz_manager$530 Def0177
+S A$quiz_manager$521 Def016E
+S A$quiz_manager$503 Def015A
+S A$quiz_manager$440 Def012A
+S A$quiz_manager$431 Def0122
+S A$quiz_manager$413 Def0112
+S A$quiz_manager$404 Def0104
+S A$quiz_manager$341 Def00C3
+S A$quiz_manager$260 Def006D
+S A$quiz_manager$233 Def005B
+S A$quiz_manager$215 Def0059
+S A$quiz_manager$170 Def002B
+S A$quiz_manager$152 Def0015
+S A$quiz_manager$134 Def0012
+S C$quiz_manager.c$187$1$57 Def0459
+S C$quiz_manager.c$184$2$59 Def042E
+S C$quiz_manager.c$175$2$59 Def03CA
+S C$quiz_manager.c$158$2$58 Def02FC
+S _engine_quiz_manager_base3 Def005B
+S A$quiz_manager$1699 Def070C
+S A$quiz_manager$900 Def0333
+S A$quiz_manager$810 Def02C0
+S A$quiz_manager$801 Def02B8
+S A$quiz_manager$720 Def0252
+S A$quiz_manager$702 Def023C
+S A$quiz_manager$630 Def01E0
+S A$quiz_manager$621 Def01D4
+S A$quiz_manager$603 Def01C5
+S A$quiz_manager$522 Def0171
+S A$quiz_manager$504 Def015C
+S A$quiz_manager$441 Def012B
+S A$quiz_manager$432 Def0124
+S A$quiz_manager$405 Def0105
+S A$quiz_manager$360 Def00E0
+S A$quiz_manager$351 Def00D0
+S A$quiz_manager$342 Def00C6
+S A$quiz_manager$324 Def00AD
+S A$quiz_manager$261 Def006E
+S A$quiz_manager$234 Def005E
+S A$quiz_manager$180 Def0038
+S A$quiz_manager$171 Def002E
+S A$quiz_manager$162 Def0022
+S A$quiz_manager$153 Def0018
+S C$quiz_manager.c$185$2$59 Def0442
+S C$quiz_manager.c$80$1$41 Def00D0
+S C$quiz_manager.c$71$1$41 Def00A6
+S C$quiz_manager.c$41$2$34 Def0027
+S C$quiz_manager.c$35$1$32 Def0015
+S G$engine_quiz_manager_base$0$0 Def0015
+S A$quiz_manager$910 Def033E
+S A$quiz_manager$901 Def0334
+S A$quiz_manager$820 Def02CF
+S A$quiz_manager$811 Def02C3
+S A$quiz_manager$802 Def02B9
+S A$quiz_manager$721 Def0253
+S A$quiz_manager$703 Def023D
+S A$quiz_manager$640 Def01EE
+S A$quiz_manager$631 Def01E1
+S A$quiz_manager$622 Def01D7
+S A$quiz_manager$604 Def01C6
+S A$quiz_manager$550 Def0182
+S A$quiz_manager$523 Def0172
+S A$quiz_manager$505 Def015D
+S A$quiz_manager$442 Def012C
+S A$quiz_manager$433 Def0125
+S A$quiz_manager$424 Def0119
+S A$quiz_manager$406 Def0107
+S A$quiz_manager$361 Def00E1
+S A$quiz_manager$352 Def00D4
+S A$quiz_manager$343 Def00C9
+S A$quiz_manager$325 Def00B0
+S A$quiz_manager$307 Def0097
+S A$quiz_manager$280 Def007A
+S A$quiz_manager$262 Def006F
+S A$quiz_manager$244 Def0067
+S A$quiz_manager$235 Def005F
+S A$quiz_manager$181 Def003A
+S A$quiz_manager$172 Def002F
+S A$quiz_manager$163 Def0025
+S A$quiz_manager$154 Def0019
+S A$quiz_manager$118 Def0000
+S XFquiz_manager$show_diff$0$0 Def0741
+S C$quiz_manager.c$168$2$59 Def0359
+S C$quiz_manager.c$81$1$41 Def00D7
+S C$quiz_manager.c$63$1$41 Def007C
+S G$engine_quiz_manager_bank$0$0 Def0068
+S C$quiz_manager.c$51$1$35 Def005B
+S C$quiz_manager.c$44$1$33 Def0044
+S C$quiz_manager.c$42$2$34 Def0034
+S _engine_quiz_manager_answer Def0074
+S A$quiz_manager$911 Def033F
+S A$quiz_manager$902 Def0335
+S A$quiz_manager$830 Def02DA
+S A$quiz_manager$821 Def02D2
+S A$quiz_manager$812 Def02C4
+S A$quiz_manager$803 Def02BA
+S A$quiz_manager$740 Def026D
+S A$quiz_manager$731 Def025D
+S A$quiz_manager$722 Def0255
+S A$quiz_manager$704 Def023E
+S A$quiz_manager$650 Def01F9
+S A$quiz_manager$641 Def01EF
+S A$quiz_manager$632 Def01E2
+S A$quiz_manager$623 Def01D9
+S A$quiz_manager$560 Def018F
+S A$quiz_manager$551 Def0184
+S A$quiz_manager$524 Def0175
+S A$quiz_manager$506 Def015E
+S A$quiz_manager$443 Def012F
+S A$quiz_manager$425 Def011C
+S A$quiz_manager$407 Def0108
+S A$quiz_manager$362 Def00E2
+S A$quiz_manager$344 Def00CB
+S A$quiz_manager$335 Def00BC
+S A$quiz_manager$326 Def00B3
+S A$quiz_manager$308 Def009A
+S A$quiz_manager$290 Def0082
+S A$quiz_manager$263 Def0072
+S A$quiz_manager$236 Def0060
+S A$quiz_manager$191 Def0044
+S A$quiz_manager$182 Def003D
+S A$quiz_manager$173 Def0032
+S A$quiz_manager$164 Def0026
+S A$quiz_manager$155 Def001C
+S A$quiz_manager$128 Def000A
+S A$quiz_manager$119 Def0003
+S C$quiz_manager.c$178$2$59 Def03DF
+S C$quiz_manager.c$169$2$59 Def037A
+S XG$engine_quiz_manager_cheat$0$0 Def0137
+S C$quiz_manager.c$82$1$41 Def00F0
+S A$quiz_manager$912 Def0340
+S A$quiz_manager$903 Def0338
+S A$quiz_manager$831 Def02DB
+S A$quiz_manager$822 Def02D3
+S A$quiz_manager$813 Def02C5
+S A$quiz_manager$804 Def02BD
+S A$quiz_manager$750 Def0278
+S A$quiz_manager$741 Def026E
+S A$quiz_manager$732 Def0260
+S A$quiz_manager$723 Def0256
+S A$quiz_manager$714 Def0248
+S A$quiz_manager$705 Def0240
+S A$quiz_manager$651 Def01FA
+S A$quiz_manager$642 Def01F2
+S A$quiz_manager$633 Def01E3
+S A$quiz_manager$624 Def01DA
+S A$quiz_manager$615 Def01CD
+S A$quiz_manager$561 Def0190
+S A$quiz_manager$552 Def0185
+S A$quiz_manager$525 Def0176
+S A$quiz_manager$516 Def0168
+S A$quiz_manager$507 Def0161
+S A$quiz_manager$480 Def0141
+S A$quiz_manager$453 Def0137
+S A$quiz_manager$444 Def0130
+S A$quiz_manager$426 Def011D
+S A$quiz_manager$417 Def0113
+S A$quiz_manager$408 Def010B
+S A$quiz_manager$390 Def00F9
+S A$quiz_manager$363 Def00E3
+S A$quiz_manager$345 Def00CC
+S A$quiz_manager$336 Def00BF
+S A$quiz_manager$327 Def00B5
+S A$quiz_manager$318 Def00A6
+S A$quiz_manager$309 Def009D
+S A$quiz_manager$291 Def0085
+S A$quiz_manager$237 Def0062
+S A$quiz_manager$183 Def003E
+S A$quiz_manager$174 Def0033
+S A$quiz_manager$156 Def001D
+S A$quiz_manager$129 Def000D
+S C$quiz_manager.c$179$2$59 Def03F2
+S C$quiz_manager.c$46$1$33 Def0052
+S C$quiz_manager.c$37$1$33 Def0015
+S C$quiz_manager.c$29$1$32 Def0000
+S A$quiz_manager$940 Def0363
+S A$quiz_manager$922 Def034B
+S A$quiz_manager$913 Def0343
+S A$quiz_manager$904 Def0339
+S A$quiz_manager$850 Def02F5
+S A$quiz_manager$832 Def02DE
+S A$quiz_manager$823 Def02D4
+S A$quiz_manager$814 Def02C8
+S A$quiz_manager$805 Def02BE
+S A$quiz_manager$751 Def0279
+S A$quiz_manager$742 Def026F
+S A$quiz_manager$733 Def0261
+S A$quiz_manager$724 Def0257
+S A$quiz_manager$715 Def024B
+S A$quiz_manager$706 Def0241
+S A$quiz_manager$661 Def0205
+S A$quiz_manager$652 Def01FD
+S A$quiz_manager$643 Def01F3
+S A$quiz_manager$634 Def01E4
+S A$quiz_manager$625 Def01DB
+S A$quiz_manager$616 Def01D0
+S A$quiz_manager$517 Def0169
+S A$quiz_manager$508 Def0162
+S A$quiz_manager$481 Def0143
+S A$quiz_manager$445 Def0133
+S A$quiz_manager$418 Def0114
+S A$quiz_manager$409 Def010C
+S A$quiz_manager$391 Def00FC
+S A$quiz_manager$364 Def00E4
+S A$quiz_manager$346 Def00CD
+S A$quiz_manager$337 Def00C1
+S A$quiz_manager$328 Def00B6
+S A$quiz_manager$319 Def00A9
+S A$quiz_manager$292 Def0088
+S A$quiz_manager$238 Def0063
+S A$quiz_manager$184 Def003F
+S A$quiz_manager$157 Def0020
+S A$quiz_manager$139 Def0014
+S C$quiz_manager.c$84$1$41 Def00F1
+S C$quiz_manager.c$75$1$41 Def00BC
+S C$quiz_manager.c$38$1$33 Def0022
+S A$quiz_manager$950 Def0372
+S A$quiz_manager$941 Def0364
+S A$quiz_manager$923 Def034E
+S A$quiz_manager$914 Def0344
+S A$quiz_manager$905 Def033A
+S A$quiz_manager$860 Def0300
+S A$quiz_manager$851 Def02F6
+S A$quiz_manager$842 Def02E8
+S A$quiz_manager$833 Def02E0
+S A$quiz_manager$815 Def02C9
+S A$quiz_manager$806 Def02BF
+S A$quiz_manager$770 Def0291
+S A$quiz_manager$752 Def027A
+S A$quiz_manager$734 Def0262
+S A$quiz_manager$725 Def025A
+S A$quiz_manager$716 Def024C
+S A$quiz_manager$707 Def0242
+S A$quiz_manager$680 Def021E
+S A$quiz_manager$662 Def0208
+S A$quiz_manager$653 Def01FE
+S A$quiz_manager$644 Def01F4
+S A$quiz_manager$635 Def01E5
+S A$quiz_manager$626 Def01DC
+S A$quiz_manager$617 Def01D1
+S A$quiz_manager$608 Def01C7
+S A$quiz_manager$590 Def01B4
+S A$quiz_manager$581 Def01A7
+S A$quiz_manager$518 Def016A
+S A$quiz_manager$509 Def0165
+S A$quiz_manager$482 Def0146
+S A$quiz_manager$446 Def0134
+S A$quiz_manager$437 Def0126
+S A$quiz_manager$419 Def0115
+S A$quiz_manager$374 Def00F0
+S A$quiz_manager$365 Def00E7
+S A$quiz_manager$356 Def00D7
+S A$quiz_manager$329 Def00B7
+S A$quiz_manager$293 Def008A
+S A$quiz_manager$284 Def007C
+S A$quiz_manager$257 Def0068
+S A$quiz_manager$239 Def0066
+S A$quiz_manager$185 Def0042
+S A$quiz_manager$158 Def0021
+S G$engine_quiz_manager_load$0$0 Def017C
+S C$quiz_manager.c$67$1$41 Def0091
+S C$quiz_manager.c$65$2$42 Def0082
+S C$quiz_manager.c$53$1$37 Def005B
+S A$quiz_manager$960 Def037D
+S A$quiz_manager$951 Def0373
+S A$quiz_manager$942 Def0365
+S A$quiz_manager$933 Def0359
+S A$quiz_manager$924 Def034F
+S A$quiz_manager$915 Def0345
+S A$quiz_manager$870 Def030F
+S A$quiz_manager$861 Def0301
+S A$quiz_manager$852 Def02F9
+S A$quiz_manager$843 Def02EB
+S A$quiz_manager$834 Def02E1
+S A$quiz_manager$816 Def02CA
+S A$quiz_manager$780 Def029C
+S A$quiz_manager$771 Def0292
+S A$quiz_manager$762 Def0284
+S A$quiz_manager$753 Def027C
+S A$quiz_manager$735 Def0263
+S A$quiz_manager$726 Def025B
+S A$quiz_manager$717 Def024D
+S A$quiz_manager$708 Def0245
+S A$quiz_manager$690 Def022D
+S A$quiz_manager$681 Def021F
+S A$quiz_manager$672 Def0213
+S A$quiz_manager$663 Def0209
+S A$quiz_manager$654 Def01FF
+S A$quiz_manager$636 Def01E8
+S A$quiz_manager$627 Def01DD
+S A$quiz_manager$609 Def01C8
+S A$quiz_manager$591 Def01B6
+S A$quiz_manager$582 Def01AA
+S A$quiz_manager$573 Def019D
+S A$quiz_manager$519 Def016C
+S A$quiz_manager$483 Def0147
+S A$quiz_manager$474 Def013C
+S A$quiz_manager$438 Def0127
+S A$quiz_manager$384 Def00F1
+S A$quiz_manager$366 Def00E9
+S A$quiz_manager$357 Def00DA
+S A$quiz_manager$294 Def008B
+S A$quiz_manager$285 Def007F
+S A$quiz_manager$258 Def006B
+S A$quiz_manager$186 Def0043
+S A$quiz_manager$168 Def0027
+S C$quiz_manager.c$73$2$44 Def00AD
+S C$quiz_manager.c$61$1$39 Def0074
+S C$quiz_manager.c$54$1$37 Def0067
+S A$quiz_manager$970 Def038C
+S A$quiz_manager$961 Def037E
+S A$quiz_manager$952 Def0374
+S A$quiz_manager$943 Def0366
+S A$quiz_manager$934 Def035C
+S A$quiz_manager$925 Def0352
+S A$quiz_manager$916 Def0348
+S A$quiz_manager$871 Def0310
+S A$quiz_manager$862 Def0304
+S A$quiz_manager$853 Def02FA
+S A$quiz_manager$844 Def02EC
+S A$quiz_manager$835 Def02E2
+S A$quiz_manager$817 Def02CB
+S A$quiz_manager$790 Def02AB
+S A$quiz_manager$781 Def029D
+S A$quiz_manager$772 Def0293
+S A$quiz_manager$763 Def0287
+S A$quiz_manager$754 Def027D
+S A$quiz_manager$736 Def0266
+S A$quiz_manager$727 Def025C
+S A$quiz_manager$718 Def0250
+S A$quiz_manager$709 Def0246
+S A$quiz_manager$691 Def022E
+S A$quiz_manager$682 Def0220
+S A$quiz_manager$673 Def0216
+S A$quiz_manager$664 Def020C
+S A$quiz_manager$655 Def0202
+S A$quiz_manager$637 Def01E9
+S A$quiz_manager$628 Def01DE
+S A$quiz_manager$592 Def01B7
+S A$quiz_manager$583 Def01AC
+S A$quiz_manager$574 Def01A0
+S A$quiz_manager$565 Def0193
+S A$quiz_manager$556 Def0186
+S A$quiz_manager$493 Def0150
+S A$quiz_manager$484 Def0148
+S A$quiz_manager$475 Def013F
+S A$quiz_manager$448 Def0135
+S A$quiz_manager$439 Def0128
+S A$quiz_manager$385 Def00F3
+S A$quiz_manager$367 Def00EA
+S A$quiz_manager$358 Def00DD
+S A$quiz_manager$295 Def008C
+S A$quiz_manager$286 Def0080
+S A$quiz_manager$268 Def0073
+S A$quiz_manager$259 Def006C
+S A$quiz_manager$178 Def0034
+S A$quiz_manager$169 Def002A
+S C$quiz_manager.c$48$1$35 Def0052
+S A$quiz_manager$980 Def0397
+S A$quiz_manager$971 Def038D
+S A$quiz_manager$962 Def0381
+S A$quiz_manager$953 Def0377
+S A$quiz_manager$944 Def0367
+S A$quiz_manager$935 Def035E
+S A$quiz_manager$926 Def0353
+S A$quiz_manager$917 Def0349
+S A$quiz_manager$890 Def0325
+S A$quiz_manager$863 Def0305
+S A$quiz_manager$854 Def02FB
+S A$quiz_manager$845 Def02EF
+S A$quiz_manager$836 Def02E5
+S A$quiz_manager$827 Def02D5
+S A$quiz_manager$818 Def02CD
+S A$quiz_manager$782 Def029E
+S A$quiz_manager$773 Def0296
+S A$quiz_manager$764 Def0288
+S A$quiz_manager$755 Def027E
+S A$quiz_manager$746 Def0270
+S A$quiz_manager$737 Def0268
+S A$quiz_manager$719 Def0251
+S A$quiz_manager$692 Def0231
+S A$quiz_manager$683 Def0221
+S A$quiz_manager$674 Def0218
+S A$quiz_manager$665 Def020D
+S A$quiz_manager$656 Def0203
+S A$quiz_manager$638 Def01EA
+S A$quiz_manager$629 Def01DF
+S A$quiz_manager$593 Def01BA
+S A$quiz_manager$584 Def01AD
+S A$quiz_manager$575 Def01A2
+S A$quiz_manager$566 Def0196
+S A$quiz_manager$557 Def0189
+S A$quiz_manager$548 Def017C
+S A$quiz_manager$494 Def0153
+S A$quiz_manager$485 Def0149
+S A$quiz_manager$476 Def0140
+S A$quiz_manager$386 Def00F7
+S A$quiz_manager$368 Def00EB
+S A$quiz_manager$359 Def00DF
+S A$quiz_manager$296 Def008F
+S A$quiz_manager$278 Def0074
+S A$quiz_manager$179 Def0037
+S C$quiz_manager.c$96$2$50 Def011F
+S C$quiz_manager.c$56$1$37 Def0068
+S C$quiz_manager.c$49$1$35 Def005A
+S A$quiz_manager$981 Def0398
+S A$quiz_manager$963 Def0382
+S A$quiz_manager$954 Def0378
+S A$quiz_manager$945 Def036A
+S A$quiz_manager$936 Def035F
+S A$quiz_manager$927 Def0354
+S A$quiz_manager$918 Def034A
+S A$quiz_manager$909 Def033B
+S A$quiz_manager$891 Def0326
+S A$quiz_manager$882 Def031A
+S A$quiz_manager$864 Def0306
+S A$quiz_manager$846 Def02F0
+S A$quiz_manager$837 Def02E6
+S A$quiz_manager$828 Def02D8
+S A$quiz_manager$819 Def02CE
+S A$quiz_manager$783 Def029F
+S A$quiz_manager$774 Def0297
+S A$quiz_manager$765 Def0289
+S A$quiz_manager$756 Def0281
+S A$quiz_manager$747 Def0273
+S A$quiz_manager$738 Def0269
+S A$quiz_manager$693 Def0232
+S A$quiz_manager$684 Def0224
+S A$quiz_manager$675 Def0219
+S A$quiz_manager$666 Def020E
+S A$quiz_manager$657 Def0204
+S A$quiz_manager$648 Def01F5
+S A$quiz_manager$639 Def01ED
+S A$quiz_manager$594 Def01BB
+S A$quiz_manager$585 Def01AE
+S A$quiz_manager$576 Def01A3
+S A$quiz_manager$567 Def0198
+S A$quiz_manager$558 Def018C
+S A$quiz_manager$549 Def017E
+S A$quiz_manager$495 Def0154
+S A$quiz_manager$486 Def014B
+S A$quiz_manager$396 Def00FE
+S A$quiz_manager$369 Def00EE
+S A$quiz_manager$279 Def0076
+S C$quiz_manager.c$97$2$50 Def0126
+S A$quiz_manager$982 Def0399
+S A$quiz_manager$964 Def0383
+S A$quiz_manager$955 Def0379
+S A$quiz_manager$946 Def036B
+S A$quiz_manager$937 Def0360
+S A$quiz_manager$928 Def0357
+S A$quiz_manager$892 Def0327
+S A$quiz_manager$883 Def031D
+S A$quiz_manager$865 Def0307
+S A$quiz_manager$847 Def02F1
+S A$quiz_manager$838 Def02E7
+S A$quiz_manager$829 Def02D9
+S A$quiz_manager$784 Def02A2
+S A$quiz_manager$775 Def0298
+S A$quiz_manager$766 Def028C
+S A$quiz_manager$757 Def0282
+S A$quiz_manager$748 Def0274
+S A$quiz_manager$739 Def026A
+S A$quiz_manager$694 Def0233
+S A$quiz_manager$685 Def0225
+S A$quiz_manager$676 Def021A
+S A$quiz_manager$667 Def0211
+S A$quiz_manager$649 Def01F8
+S A$quiz_manager$595 Def01BC
+S A$quiz_manager$577 Def01A4
+S A$quiz_manager$568 Def0199
+S A$quiz_manager$559 Def018E
+S A$quiz_manager$496 Def0155
+S A$quiz_manager$487 Def014D
+S A$quiz_manager$397 Def00FF
+S C$quiz_manager.c$69$2$43 Def0097
+S XG$engine_quiz_manager_base2$0$0 Def005A
+S A$quiz_manager$992 Def03A3
+S A$quiz_manager$983 Def039B
+S A$quiz_manager$965 Def0384
+S A$quiz_manager$947 Def036C
+S A$quiz_manager$938 Def0361
+S A$quiz_manager$929 Def0358
+S A$quiz_manager$893 Def0328
+S A$quiz_manager$884 Def031F
+S A$quiz_manager$866 Def0309
+S A$quiz_manager$848 Def02F2
+S A$quiz_manager$794 Def02AC
+S A$quiz_manager$785 Def02A4
+S A$quiz_manager$767 Def028D
+S A$quiz_manager$758 Def0283
+S A$quiz_manager$749 Def0277
+S A$quiz_manager$686 Def0226
+S A$quiz_manager$677 Def021B
+S A$quiz_manager$668 Def0212
+S A$quiz_manager$596 Def01BF
+S A$quiz_manager$569 Def019A
+S A$quiz_manager$497 Def0156
+S A$quiz_manager$488 Def014E
+S A$quiz_manager$398 Def0101
+S C$quiz_manager.c$94$1$47 Def0119
+S C$quiz_manager.c$90$3$49 Def00FE
+S C$quiz_manager.c$77$2$45 Def00C3
+S XG$engine_quiz_manager_base3$0$0 Def0067
+S C$quiz_manager.c$27$0$0 Def0000
+S A$quiz_manager$993 Def03A6
+S A$quiz_manager$984 Def039C
+S A$quiz_manager$975 Def038E
+S A$quiz_manager$966 Def0386
+S A$quiz_manager$948 Def036D
+S A$quiz_manager$939 Def0362
+S A$quiz_manager$894 Def0329
+S A$quiz_manager$885 Def0320
+S A$quiz_manager$876 Def0313
+S A$quiz_manager$867 Def030A
+S A$quiz_manager$858 Def02FC
+S A$quiz_manager$849 Def02F4
+S A$quiz_manager$795 Def02AF
+S A$quiz_manager$786 Def02A5
+S A$quiz_manager$768 Def028E
+S A$quiz_manager$687 Def0227
+S A$quiz_manager$678 Def021C
+S A$quiz_manager$597 Def01C0
+S A$quiz_manager$489 Def014F
+S A$quiz_manager$399 Def0102
+S C$quiz_manager.c$91$3$49 Def0103
+S C$quiz_manager.c$58$1$39 Def0068
+S _engine_quiz_manager_base Def0015
+S A$quiz_manager$994 Def03A7
+S A$quiz_manager$985 Def039D
+S A$quiz_manager$976 Def0391
+S A$quiz_manager$967 Def0387
+S A$quiz_manager$949 Def0370
+S A$quiz_manager$895 Def032A
+S A$quiz_manager$886 Def0321
+S A$quiz_manager$877 Def0316
+S A$quiz_manager$868 Def030B
+S A$quiz_manager$859 Def02FF
+S A$quiz_manager$796 Def02B0
+S A$quiz_manager$787 Def02A6
+S A$quiz_manager$769 Def028F
+S A$quiz_manager$688 Def022A
+S A$quiz_manager$679 Def021D
+S A$quiz_manager$589 Def01B1
+S XG$engine_quiz_manager_answer$0$0 Def00F0
+S C$quiz_manager.c$59$1$39 Def0073
+S _engine_quiz_manager_bank Def0068
+S A$quiz_manager$995 Def03A8
+S A$quiz_manager$986 Def03A0
+S A$quiz_manager$977 Def0392
+S A$quiz_manager$968 Def0388
+S A$quiz_manager$959 Def037A
+S A$quiz_manager$896 Def032B
+S A$quiz_manager$887 Def0322
+S A$quiz_manager$878 Def0317
+S A$quiz_manager$869 Def030E
+S A$quiz_manager$797 Def02B3
+S A$quiz_manager$788 Def02A9
+S A$quiz_manager$779 Def0299
+S A$quiz_manager$698 Def0234
+S A$quiz_manager$689 Def022C
+S A$quiz_manager$996 Def03A9
+S A$quiz_manager$987 Def03A1
+S A$quiz_manager$978 Def0393
+S A$quiz_manager$969 Def038B
+S A$quiz_manager$897 Def032E
+S A$quiz_manager$888 Def0323
+S A$quiz_manager$798 Def02B4
+S A$quiz_manager$789 Def02AA
+S A$quiz_manager$699 Def0237
+S A$quiz_manager$997 Def03AC
+S A$quiz_manager$988 Def03A2
+S A$quiz_manager$979 Def0396
+S A$quiz_manager$898 Def032F
+S A$quiz_manager$889 Def0324
+S A$quiz_manager$799 Def02B5
+S C$quiz_manager.c$99$1$47 Def0137
+S C$quiz_manager.c$88$2$48 Def0113
+S A$quiz_manager$998 Def03AE
+S A$quiz_manager$899 Def0330
+S _engine_quiz_manager_load Def017C
+S A$quiz_manager$999 Def03AF
+S C$quiz_manager.c$88$3$49 Def00F9
+S Fquiz_manager$__str_0$0$0 Def0045
+S Fquiz_manager$__str_1$0$0 Def0050
+S Fquiz_manager$__str_2$0$0 Def0138
+S XG$engine_quiz_manager_base$0$0 Def0044
+S Fquiz_manager$__str_3$0$0 Def013A
+S XG$engine_quiz_manager_bank$0$0 Def0073
+S G$engine_quiz_manager_init$0$0 Def0000
+S Fquiz_manager$__str_4$0$0 Def0178
+A _DATA size 108 flags 0 addr 0
+S G$question_index$0$0 Def00FE
+S G$option_height$0$0 Def00FA
+S G$question_value$0$0 Def0101
+S G$quiz_options$0$0 Def0032
+S _question_index Def00FE
+S _option_height Def00FA
+S G$question_count$0$0 Def0100
+S _quiz_options Def0032
+S _question_value Def0101
+S G$option1_value$0$0 Def0102
+S G$answer_index$0$0 Def0106
+S G$option2_value$0$0 Def0103
+S G$question_long$0$0 Def00FF
+S G$option3_value$0$0 Def0104
+S G$option4_value$0$0 Def0105
+S G$answer_value$0$0 Def0107
+S _question_count Def0100
+S _option1_value Def0102
+S G$quiz_questions$0$0 Def0000
+S _question_long Def00FF
+S _option2_value Def0103
+S _answer_index Def0106
+S _option3_value Def0104
+S _option4_value Def0105
+S _answer_value Def0107
+S _quiz_questions Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 32 00
+R 00 00 01 00
+T 32 00
+R 00 00 01 00
+T FA 00
+R 00 00 01 00
+T FA 00
+R 00 00 01 00
+T FE 00
+R 00 00 01 00
+T FE 00
+R 00 00 01 00
+T FF 00
+R 00 00 01 00
+T FF 00
+R 00 00 01 00
+T 00 01
+R 00 00 01 00
+T 00 01
+R 00 00 01 00
+T 01 01
+R 00 00 01 00
+T 01 01
+R 00 00 01 00
+T 02 01
+R 00 00 01 00
+T 02 01
+R 00 00 01 00
+T 03 01
+R 00 00 01 00
+T 03 01
+R 00 00 01 00
+T 04 01
+R 00 00 01 00
+T 04 01
+R 00 00 01 00
+T 05 01
+R 00 00 01 00
+T 05 01
+R 00 00 01 00
+T 06 01
+R 00 00 01 00
+T 06 01
+R 00 00 01 00
+T 07 01
+R 00 00 01 00
+T 07 01
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 21 FA 00 36 09 21 FB 00 36 0D 21 FC 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 0E 00 11 21 FD 00 36 15 C9
+R 00 00 00 00 00 04 01 00
+T 15 00
+R 00 00 00 00
+T 15 00 21 02 03 E5 21 45 00 E5 CD 00 00 F1 F1 3A
+R 00 00 00 00 00 07 00 00 02 0B 06 00
+T 23 00 00 00 B7 C8 21 0F 03 E5 21 50 00 E5 CD
+R 00 00 00 00 02 02 40 00 00 0B 00 00
+T 30 00 00 00 F1 F1 21 FF 00 4E 06 00 21 12 03 E5
+R 00 00 00 00 02 02 06 00 00 07 01 00
+T 3E 00 C5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 04 46 00
+T 45 00
+R 00 00 00 00
+T 45 00 51 55 45 53 54 49 4F 4E 20 23 00
+R 00 00 00 00
+T 50 00
+R 00 00 00 00
+T 50 00 2F 00
+R 00 00 00 00
+T 52 00
+R 00 00 00 00
+T 52 00 21 1A 02 E5 CD E9 06 F1 C9
+R 00 00 00 00 00 07 00 00
+T 5B 00
+R 00 00 00 00
+T 5B 00 21 02 00 39 56 1E 18 D5 CD E9 06 F1 C9
+R 00 00 00 00 00 0B 00 00
+T 68 00
+R 00 00 00 00
+T 68 00 21 02 00 39 7E F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 0A 47 00
+T 74 00
+R 00 00 00 00
+T 74 00 DD E5 DD 21 00 00 DD 39 3A 00 00 B7 20 0F
+R 00 00 00 00 02 0B 44 00
+T 82 00 01 00 00 DD 6E 04 26 00 09 7E 32 07 01 18
+R 00 00 00 00 02 03 01 00 00 0D 01 00
+T 90 00 3F
+R 00 00 00 00
+T 91 00
+R 00 00 00 00
+T 91 00 3A 00 00 3D 20 0F 01 00 00 DD 6E 04 26 00
+R 00 00 00 00 02 03 44 00 02 09 05 00
+T 9F 00 09 7E 32 07 01 18 2A
+R 00 00 00 00 00 05 01 00
+T A6 00
+R 00 00 00 00
+T A6 00 3A 00 00 D6 02 20 0F 01 00 00 DD 6E 04 26
+R 00 00 00 00 02 03 44 00 02 0A 0D 00
+T B4 00 00 09 7E 32 07 01 18 14
+R 00 00 00 00 00 06 01 00
+T BC 00
+R 00 00 00 00
+T BC 00 3A 00 00 D6 03 20 0D 01 00 00 DD 6E 04 26
+R 00 00 00 00 02 03 44 00 02 0A 17 00
+T CA 00 00 09 7E 32 07 01
+R 00 00 00 00 00 06 01 00
+T D0 00
+R 00 00 00 00
+T D0 00 FD 21 07 01 FD 35 00 01 32 00 DD 6E 04 26
+R 00 00 00 00 00 04 01 00 00 0A 01 00
+T DE 00 00 29 29 09 4D 44 FD 6E 00 26 00 09 7E 32
+R 00 00 00 00
+T EC 00 06 01 DD E1 C9
+R 00 00 00 00 00 02 01 00
+T F1 00
+R 00 00 00 00
+T F1 00 DD E5 DD 21 00 00 DD 39 01 FA 00 1E 00
+R 00 00 00 00 00 0B 01 00
+T FE 00
+R 00 00 00 00
+T FE 00 6B 26 00 09 56 C5 D5 1E 01 D5 21 38 01 E5
+R 00 00 00 00 00 0D 00 00
+T 0C 01 CD 00 00 F1 F1 D1 C1 1C 7B D6 04 38 E5 3A
+R 00 00 00 00 02 03 06 00
+T 1A 01 00 00 B7 28 16 DD 6E 04 26 00 09 46 C5 33
+R 00 00 00 00 02 02 34 00
+T 28 01 3E 01 F5 33 21 3A 01 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 07 00 00 02 0B 06 00
+T 35 01
+R 00 00 00 00
+T 35 01 DD E1 C9
+R 00 00 00 00
+T 38 01
+R 00 00 00 00
+T 38 01 20 00
+R 00 00 00 00
+T 3A 01
+R 00 00 00 00
+T 3A 01 3E 00
+R 00 00 00 00
+T 3C 01
+R 00 00 00 00
+T 3C 01 3A 00 00 B7 C8 3E FA 00 21 02 00 39 86 4F
+R 00 00 00 00 02 03 34 00 09 08 01 00
+T 49 01 3E FA 00 CE 00 47 0A 47 21 03 00 39 7E B7
+R 00 00 00 00 89 03 01 00
+T 56 01 20 10 C5 33 3E 01 F5 33 21 78 01 E5 CD
+R 00 00 00 00 00 0B 00 00
+T 63 01 00 00 F1 F1 C9
+R 00 00 00 00 02 02 06 00
+T 68 01
+R 00 00 00 00
+T 68 01 C5 33 3E 01 F5 33 21 7A 01 E5 CD 00 00 F1
+R 00 00 00 00 00 09 00 00 02 0D 06 00
+T 76 01 F1 C9
+R 00 00 00 00
+T 78 01
+R 00 00 00 00
+T 78 01 3E 00
+R 00 00 00 00
+T 7A 01
+R 00 00 00 00
+T 7A 01 20 00
+R 00 00 00 00
+T 7C 01
+R 00 00 00 00
+T 7C 01 DD E5 DD 21 00 00 DD 39 F5 F5 01 FA 00 DD
+R 00 00 00 00 00 0D 01 00
+T 8A 01 6E 06 26 00 09 7E DD 77 FE DD 6E 07 26 00
+R 00 00 00 00
+T 98 01 09 7E DD 77 FD DD 6E 08 26 00 09 7E DD 77
+R 00 00 00 00
+T A6 01 FF DD 6E 09 26 00 09 7E DD 77 FC DD 4E 04
+R 00 00 00 00
+T B4 01 06 00 03 21 0E 03 E5 C5 CD 00 00 F1 F1 21
+R 00 00 00 00 02 0B 46 00
+T C2 01 00 00 46 04 04 C5 33 CD 68 00 33 3A 00 00
+R 00 00 00 00 02 02 44 00 00 0A 00 00 02 0E 44 00
+T D0 01 B7 C2 13 03 DD 4E 05 06 00 69 60 29 09 29
+R 00 00 00 00 00 04 00 00
+T DE 01 09 29 09 29 09 4D 44 21 00 00 09 C5 11
+R 00 00 00 00 02 0A 2B 00
+T EB 01 02 05 D5 E5 CD 00 00 F1 F1 C1 21 00 00 09
+R 00 00 00 00 02 07 06 00 02 0D 33 00
+T F9 01 C5 11 02 06 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 09 06 00
+T 06 02 00 00 09 01 02 07 C5 E5 CD 00 00 F1 F1 DD
+R 00 00 00 00 02 02 3B 00 02 0B 06 00
+T 14 02 4E 05 06 00 69 60 29 29 29 09 29 4D 44 21
+R 00 00 00 00
+T 22 02 00 00 09 EB C5 DD 46 FE 0E 04 C5 D5 CD
+R 00 00 00 00 02 02 00 00
+T 2F 02 00 00 F1 F1 C1 DD 5E FE 1C 21 00 00 09 C5
+R 00 00 00 00 02 02 06 00 02 0C 04 00
+T 3D 02 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 5E FE
+R 00 00 00 00 02 08 06 00
+T 4B 02 1C 1C 21 00 00 09 C5 53 1E 04 D5 E5 CD
+R 00 00 00 00 02 05 0C 00
+T 58 02 00 00 F1 F1 C1 21 00 00 09 EB C5 DD 46 FD
+R 00 00 00 00 02 02 06 00 02 08 03 00
+T 66 02 0E 04 C5 D5 CD 00 00 F1 F1 C1 DD 5E FD 1C
+R 00 00 00 00 02 07 06 00
+T 74 02 21 00 00 09 C5 53 1E 04 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 0B 00 02 0D 06 00
+T 82 02 F1 C1 DD 5E FD 1C 1C 21 00 00 09 C5 53 1E
+R 00 00 00 00 02 0A 16 00
+T 90 02 04 D5 E5 CD 00 00 F1 F1 C1 21 00 00 09 EB
+R 00 00 00 00 02 06 06 00 02 0C 0A 00
+T 9E 02 C5 DD 46 FF 0E 04 C5 D5 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 06 00
+T AC 02 DD 5E FF 1C 21 00 00 09 C5 53 1E 04 D5 E5
+R 00 00 00 00 02 07 15 00
+T BA 02 CD 00 00 F1 F1 C1 DD 5E FF 1C 1C 21 00 00
+R 00 00 00 00 02 03 06 00 02 0E 21 00
+T C8 02 09 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 0A 06 00
+T D6 02 00 00 09 EB C5 DD 46 FC 0E 04 C5 D5 CD
+R 00 00 00 00 02 02 14 00
+T E3 02 00 00 F1 F1 C1 DD 5E FC 1C 21 00 00 09 C5
+R 00 00 00 00 02 02 06 00 02 0C 20 00
+T F1 02 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 56 FC
+R 00 00 00 00 02 08 06 00
+T FF 02 14 14 21 00 00 09 4D 44 1E 04 D5 C5 CD
+R 00 00 00 00 02 05 2A 00
+T 0C 03 00 00 F1 F1 C3 E4 06
+R 00 00 00 00 02 02 06 00 00 07 00 00
+T 13 03
+R 00 00 00 00
+T 13 03 3A 00 00 3D C2 59 04 DD 4E 05 06 00 69 60
+R 00 00 00 00 02 03 44 00 00 07 00 00
+T 21 03 29 09 29 09 29 09 29 09 4D 44 21 00 00 09
+R 00 00 00 00 02 0D 32 00
+T 2F 03 C5 11 02 05 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 09 06 00
+T 3C 03 00 00 09 C5 11 02 06 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 02 3A 00 02 0C 06 00
+T 4A 03 C1 21 00 00 09 01 02 07 C5 E5 CD 00 00 F1
+R 00 00 00 00 02 04 3F 00 02 0D 06 00
+T 58 03 F1 DD 4E 05 06 00 69 60 29 29 29 09 29 4D
+R 00 00 00 00
+T 66 03 44 21 00 00 09 EB C5 DD 46 FE 0E 04 C5 D5
+R 00 00 00 00 02 04 02 00
+T 74 03 CD 00 00 F1 F1 C1 DD 5E FE 1C 21 00 00 09
+R 00 00 00 00 02 03 06 00 02 0D 09 00
+T 82 03 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 5E
+R 00 00 00 00 02 09 06 00
+T 90 03 FE 1C 1C 21 00 00 09 C5 53 1E 04 D5 E5 CD
+R 00 00 00 00 02 06 13 00
+T 9E 03 00 00 F1 F1 C1 21 00 00 09 EB C5 DD 46 FD
+R 00 00 00 00 02 02 06 00 02 08 08 00
+T AC 03 0E 04 C5 D5 CD 00 00 F1 F1 C1 DD 5E FD 1C
+R 00 00 00 00 02 07 06 00
+T BA 03 21 00 00 09 C5 53 1E 04 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 12 00 02 0D 06 00
+T C8 03 F1 C1 DD 5E FD 1C 1C 21 00 00 09 C5 53 1E
+R 00 00 00 00 02 0A 1F 00
+T D6 03 04 D5 E5 CD 00 00 F1 F1 C1 21 00 00 09 EB
+R 00 00 00 00 02 06 06 00 02 0C 11 00
+T E4 03 C5 DD 46 FF 0E 04 C5 D5 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 06 00
+T F2 03 DD 5E FF 1C 21 00 00 09 C5 53 1E 04 D5 E5
+R 00 00 00 00 02 07 1E 00
+T 00 04 CD 00 00 F1 F1 C1 DD 5E FF 1C 1C 21 00 00
+R 00 00 00 00 02 03 06 00 02 0E 29 00
+T 0E 04 09 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 0A 06 00
+T 1C 04 00 00 09 EB C5 DD 46 FC 0E 04 C5 D5 CD
+R 00 00 00 00 02 02 1D 00
+T 29 04 00 00 F1 F1 C1 DD 5E FC 1C 21 00 00 09 C5
+R 00 00 00 00 02 02 06 00 02 0C 28 00
+T 37 04 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 56 FC
+R 00 00 00 00 02 08 06 00
+T 45 04 14 14 21 00 00 09 4D 44 1E 04 D5 C5 CD
+R 00 00 00 00 02 05 31 00
+T 52 04 00 00 F1 F1 C3 E4 06
+R 00 00 00 00 02 02 06 00 00 07 00 00
+T 59 04
+R 00 00 00 00
+T 59 04 3A 00 00 D6 02 C2 A0 05 DD 4E 05 06 00 69
+R 00 00 00 00 02 03 44 00 00 08 00 00
+T 67 04 60 29 09 29 09 29 09 29 09 4D 44 21 00 00
+R 00 00 00 00 02 0E 39 00
+T 75 04 09 C5 11 02 05 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 0A 06 00
+T 83 04 00 00 09 C5 11 02 06 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 02 3E 00 02 0C 06 00
+T 91 04 C1 21 00 00 09 01 02 07 C5 E5 CD 00 00 F1
+R 00 00 00 00 02 04 42 00 02 0D 06 00
+T 9F 04 F1 DD 4E 05 06 00 69 60 29 29 29 09 29 4D
+R 00 00 00 00
+T AD 04 44 21 00 00 09 EB C5 DD 46 FE 0E 04 C5 D5
+R 00 00 00 00 02 04 07 00
+T BB 04 CD 00 00 F1 F1 C1 DD 5E FE 1C 21 00 00 09
+R 00 00 00 00 02 03 06 00 02 0D 10 00
+T C9 04 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 5E
+R 00 00 00 00 02 09 06 00
+T D7 04 FE 1C 1C 21 00 00 09 C5 53 1E 04 D5 E5 CD
+R 00 00 00 00 02 06 1C 00
+T E5 04 00 00 F1 F1 C1 21 00 00 09 EB C5 DD 46 FD
+R 00 00 00 00 02 02 06 00 02 08 0F 00
+T F3 04 0E 04 C5 D5 CD 00 00 F1 F1 C1 DD 5E FD 1C
+R 00 00 00 00 02 07 06 00
+T 01 05 21 00 00 09 C5 53 1E 04 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 1B 00 02 0D 06 00
+T 0F 05 F1 C1 DD 5E FD 1C 1C 21 00 00 09 C5 53 1E
+R 00 00 00 00 02 0A 27 00
+T 1D 05 04 D5 E5 CD 00 00 F1 F1 C1 21 00 00 09 EB
+R 00 00 00 00 02 06 06 00 02 0C 1A 00
+T 2B 05 C5 DD 46 FF 0E 04 C5 D5 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 06 00
+T 39 05 DD 5E FF 1C 21 00 00 09 C5 53 1E 04 D5 E5
+R 00 00 00 00 02 07 26 00
+T 47 05 CD 00 00 F1 F1 C1 DD 5E FF 1C 1C 21 00 00
+R 00 00 00 00 02 03 06 00 02 0E 30 00
+T 55 05 09 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 0A 06 00
+T 63 05 00 00 09 EB C5 DD 46 FC 0E 04 C5 D5 CD
+R 00 00 00 00 02 02 25 00
+T 70 05 00 00 F1 F1 C1 DD 5E FC 1C 21 00 00 09 C5
+R 00 00 00 00 02 02 06 00 02 0C 2F 00
+T 7E 05 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 56 FC
+R 00 00 00 00 02 08 06 00
+T 8C 05 14 14 21 00 00 09 4D 44 1E 04 D5 C5 CD
+R 00 00 00 00 02 05 38 00
+T 99 05 00 00 F1 F1 C3 E4 06
+R 00 00 00 00 02 02 06 00 00 07 00 00
+T A0 05
+R 00 00 00 00
+T A0 05 3A 00 00 D6 03 C2 E4 06 DD 4E 05 06 00 69
+R 00 00 00 00 02 03 44 00 00 08 00 00
+T AE 05 60 29 09 29 09 29 09 29 09 4D 44 21 00 00
+R 00 00 00 00 02 0E 3D 00
+T BC 05 09 C5 11 02 05 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 0A 06 00
+T CA 05 00 00 09 C5 11 02 06 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 02 41 00 02 0C 06 00
+T D8 05 C1 21 00 00 09 01 02 07 C5 E5 CD 00 00 F1
+R 00 00 00 00 02 04 43 00 02 0D 06 00
+T E6 05 F1 DD 4E 05 06 00 69 60 29 29 29 09 29 4D
+R 00 00 00 00
+T F4 05 44 21 00 00 09 EB C5 DD 46 FE 0E 04 C5 D5
+R 00 00 00 00 02 04 0E 00
+T 02 06 CD 00 00 F1 F1 C1 DD 5E FE 1C 21 00 00 09
+R 00 00 00 00 02 03 06 00 02 0D 19 00
+T 10 06 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 5E
+R 00 00 00 00 02 09 06 00
+T 1E 06 FE 1C 1C 21 00 00 09 C5 53 1E 04 D5 E5 CD
+R 00 00 00 00 02 06 24 00
+T 2C 06 00 00 F1 F1 C1 21 00 00 09 EB C5 DD 46 FD
+R 00 00 00 00 02 02 06 00 02 08 18 00
+T 3A 06 0E 04 C5 D5 CD 00 00 F1 F1 C1 DD 5E FD 1C
+R 00 00 00 00 02 07 06 00
+T 48 06 21 00 00 09 C5 53 1E 04 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 23 00 02 0D 06 00
+T 56 06 F1 C1 DD 5E FD 1C 1C 21 00 00 09 C5 53 1E
+R 00 00 00 00 02 0A 2E 00
+T 64 06 04 D5 E5 CD 00 00 F1 F1 C1 21 00 00 09 EB
+R 00 00 00 00 02 06 06 00 02 0C 22 00
+T 72 06 C5 DD 46 FF 0E 04 C5 D5 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 06 00
+T 80 06 DD 5E FF 1C 21 00 00 09 C5 53 1E 04 D5 E5
+R 00 00 00 00 02 07 2D 00
+T 8E 06 CD 00 00 F1 F1 C1 DD 5E FF 1C 1C 21 00 00
+R 00 00 00 00 02 03 06 00 02 0E 37 00
+T 9C 06 09 C5 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 21
+R 00 00 00 00 02 0A 06 00
+T AA 06 00 00 09 EB C5 DD 46 FC 0E 04 C5 D5 CD
+R 00 00 00 00 02 02 2C 00
+T B7 06 00 00 F1 F1 C1 DD 5E FC 1C 21 00 00 09 C5
+R 00 00 00 00 02 02 06 00 02 0C 36 00
+T C5 06 53 1E 04 D5 E5 CD 00 00 F1 F1 C1 DD 56 FC
+R 00 00 00 00 02 08 06 00
+T D3 06 14 14 21 00 00 09 4D 44 1E 04 D5 C5 CD
+R 00 00 00 00 02 05 3C 00
+T E0 06 00 00 F1 F1
+R 00 00 00 00 02 02 06 00
+T E4 06
+R 00 00 00 00
+T E4 06 DD F9 DD E1 C9
+R 00 00 00 00
+T E9 06
+R 00 00 00 00
+T E9 06 DD E5 DD 21 00 00 DD 39 3A 00 00 B7 28 48
+R 00 00 00 00 02 0B 40 00
+T F7 06 DD 66 05 DD 6E 04 E5 21 42 07 E5 CD 00 00
+R 00 00 00 00 00 0A 00 00 02 0E 06 00
+T 05 07 F1 F1 DD 7E 04 C6 05 47 DD 7E 05 F5 33 C5
+R 00 00 00 00
+T 13 07 33 21 44 07 E5 CD 00 00 F1 F1 DD 56 04 14
+R 00 00 00 00 00 04 00 00 02 08 06 00
+T 21 07 ED 4B 00 00 06 00 69 60 29 09 29 01 00 00
+R 00 00 00 00 02 04 44 00 02 0E 35 00
+T 2F 07 09 4D 44 DD 7E 05 F5 33 D5 33 C5 CD 00 00
+R 00 00 00 00 02 0E 06 00
+T 3D 07 F1 F1
+R 00 00 00 00
+T 3F 07
+R 00 00 00 00
+T 3F 07 DD E1 C9
+R 00 00 00 00
+T 42 07
+R 00 00 00 00
+T 42 07 5B 00
+R 00 00 00 00
+T 44 07
+R 00 00 00 00
+T 44 07 5D 00
+R 00 00 00 00

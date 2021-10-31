@@ -1,0 +1,120 @@
+;!FILE hack_manager.asm
+XL2
+H 9 areas 40 global symbols
+M hack_manager
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 53 flags 0 addr 0
+S C$hack_manager.c$44$1$2 Def0034
+S C$hack_manager.c$36$1$1 Def001E
+S C$hack_manager.c$45$1$2 Def0043
+S A$hack_manager$80 Def0000
+S C$hack_manager.c$46$1$2 Def0052
+S A$hack_manager$90 Def000C
+S A$hack_manager$81 Def0003
+S C$hack_manager.c$39$1$1 Def0024
+S A$hack_manager$91 Def000F
+S A$hack_manager$85 Def0006
+S A$hack_manager$95 Def0012
+S A$hack_manager$86 Def0009
+S XG$engine_hack_manager_invert$0$0 Def0052
+S A$hack_manager$96 Def0015
+S G$engine_hack_manager_init$0$0 Def0000
+S _engine_hack_manager_init Def0000
+S XG$engine_hack_manager_init$0$0 Def0024
+S A$hack_manager$100 Def0018
+S A$hack_manager$101 Def001B
+S A$hack_manager$111 Def0024
+S A$hack_manager$105 Def001E
+S G$engine_hack_manager_invert$0$0 Def0025
+S A$hack_manager$142 Def0043
+S A$hack_manager$133 Def0034
+S A$hack_manager$124 Def0025
+S A$hack_manager$106 Def0021
+S A$hack_manager$152 Def0052
+S A$hack_manager$143 Def0047
+S A$hack_manager$134 Def0038
+S A$hack_manager$125 Def0029
+S A$hack_manager$144 Def004A
+S A$hack_manager$135 Def003B
+S A$hack_manager$126 Def002C
+S A$hack_manager$145 Def004C
+S A$hack_manager$136 Def003D
+S A$hack_manager$127 Def002E
+S A$hack_manager$146 Def004E
+S A$hack_manager$137 Def003F
+S A$hack_manager$128 Def0030
+S A$hack_manager$147 Def004F
+S A$hack_manager$138 Def0040
+S A$hack_manager$129 Def0031
+S C$hack_manager.c$30$1$1 Def0000
+S C$hack_manager.c$41$1$1 Def0025
+S C$hack_manager.c$32$1$1 Def0006
+S _engine_hack_manager_invert Def0025
+S C$hack_manager.c$33$1$1 Def000C
+S C$hack_manager.c$34$1$1 Def0012
+S C$hack_manager.c$43$1$2 Def0025
+S C$hack_manager.c$35$1$1 Def0018
+S C$hack_manager.c$19$0$0 Def0000
+A _DATA size 6 flags 0 addr 0
+S G$hacker_music$0$0 Def0003
+S G$hacker_extra$0$0 Def0005
+S G$hacker_sound$0$0 Def0004
+S _hacker_music Def0003
+S _hacker_extra Def0005
+S _hacker_sound Def0004
+S G$hacker_random$0$0 Def0002
+S G$hacker_cheat$0$0 Def0001
+S G$hacker_debug$0$0 Def0000
+S _hacker_random Def0002
+S _hacker_cheat Def0001
+S _hacker_debug Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 03 00
+R 00 00 01 00
+T 03 00
+R 00 00 01 00
+T 04 00
+R 00 00 01 00
+T 04 00
+R 00 00 01 00
+T 05 00
+R 00 00 01 00
+T 05 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 3A 4F 00 32 00 00 3A 50 00 32 01 00 3A
+R 00 00 00 00 00 06 01 00 00 0C 01 00
+T 0D 00 51 00 32 02 00 3A 52 00 32 03 00 3A 53 00
+R 00 00 00 00 00 05 01 00 00 0B 01 00
+T 1B 00 32 04 00 3A 54 00 32 05 00 C9
+R 00 00 00 00 00 03 01 00 00 09 01 00
+T 25 00
+R 00 00 00 00
+T 25 00 FD 21 03 00 FD 7E 00 D6 01 3E 00 17 FD 77
+R 00 00 00 00 00 04 01 00
+T 33 00 00 FD 21 04 00 FD 7E 00 D6 01 3E 00 17 FD
+R 00 00 00 00 00 05 01 00
+T 41 00 77 00 FD 21 05 00 FD 7E 00 D6 01 3E 00 17
+R 00 00 00 00 00 06 01 00
+T 4F 00 FD 77 00 C9
+R 00 00 00 00

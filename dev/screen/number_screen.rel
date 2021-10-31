@@ -1,0 +1,54 @@
+;!FILE number_screen.asm
+XL2
+H 9 areas 1E global symbols
+M number_screen
+O -mz80
+S _engine_actor_manager_load Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _engine_content_manager_load_sprites Ref0000
+S .__.ABS. Def0000
+S _devkit_SMS_displayOff Ref0000
+A _CODE size 13 flags 0 addr 0
+S C$number_screen.c$11$1$26 Def0000
+S C$number_screen.c$12$1$26 Def0003
+S _screen_number_screen_update Def000C
+S C$number_screen.c$20$1$28 Def0012
+S C$number_screen.c$13$1$26 Def0006
+S C$number_screen.c$14$1$26 Def0009
+S C$number_screen.c$15$1$26 Def0009
+S C$number_screen.c$17$1$26 Def000C
+S C$number_screen.c$19$1$28 Def000C
+S XG$screen_number_screen_update$0$0 Def0012
+S A$number_screen$60 Def0000
+S G$screen_number_screen_load$0$0 Def0000
+S A$number_screen$90 Def000D
+S A$number_screen$91 Def000E
+S A$number_screen$64 Def0003
+S A$number_screen$92 Def000F
+S A$number_screen$93 Def0010
+S A$number_screen$76 Def0009
+S A$number_screen$68 Def0006
+S A$number_screen$98 Def0012
+S A$number_screen$89 Def000C
+S C$number_screen.c$9$0$0 Def0000
+S _screen_number_screen_load Def0000
+S XG$screen_number_screen_load$0$0 Def0009
+S G$screen_number_screen_update$0$0 Def000C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 CD 00 00 CD 00 00 C3
+R 00 00 00 00 02 03 04 00 02 06 00 00 02 09 02 00
+T 0A 00 00 00
+R 00 00 00 00 02 02 01 00
+T 0C 00
+R 00 00 00 00
+T 0C 00 C1 E1 E5 C5 36 06 C9
+R 00 00 00 00

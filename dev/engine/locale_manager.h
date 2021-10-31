@@ -1,7 +1,7 @@
 #ifndef _LOCALE_MANAGER_H_
 #define _LOCALE_MANAGER_H_
 
-#define LOCALE_VERSION		"V1.02"
+#define LOCALE_VERSION		"V2.0"
 
 #define LOCALE_BLANK		"                                "
 #define LOCALE_PAUSED		"PAUSED"
@@ -22,7 +22,7 @@
 #define LOCALE_READY		"READY   "
 #define LOCALE_DOT			"."
 
-#define LOCALE_QUESTIONS	"QUESTIONS"
+#define LOCALE_QUESTIONS	"QUESTIONS "
 
 #define LOCALE_QUESTION		"QUESTION #"
 #define LOCALE_SCORE		"SCORE"
@@ -62,8 +62,8 @@
 
 #define LOCALE_FIRE1		"PRESS FIRE1 => QUIT"
 #define LOCALE_FIRE2		"PRESS FIRE2 => BACK"
-#define LOCALE_OVER_MSG1	"THANKS FOR PLAYING"
-#define LOCALE_OVER_MSG2	"=STEVEPRO STUDIOS="
+#define LOCALE_OVER_MSG1	"THANKS FOR PLAYING "
+#define LOCALE_OVER_MSG2	"=STEVEPRO STUDIOS= "
 
 #define LOCALE_BLANK3		"   "
 #define LOCALE_BLANK5		"     "

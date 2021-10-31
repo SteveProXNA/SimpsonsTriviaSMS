@@ -2,14 +2,7 @@
 #define _GLOBAL_MANAGER_H_
 
 // General.
-#define MAX_STATES			19
-
-// Content.
-#define MUSIC_PSG			music_psg
-#define FINISH_PSG			finish_psg
-#define SOUND1_PSG			sfx_right_psg
-#define SOUND2_PSG			sfx_wrong_psg
-#define SOUND3_PSG			sfx_cheat_psg
+#define MAX_SCREEENS		15
 
 // Sprites.
 #define SPRITE_TILES		64
@@ -38,5 +31,32 @@
 // Dots.
 #define DOTS_X				6
 #define DOTS_Y				18
+
+// Actors.
+#define MAX_ACTORS			16
+
+// Audio
+#define MAX_RIGHT			3
+#define MAX_WRONG			3
+
+// Audio
+#define COLOR_BLACK			0
+#define COLOR_WHITE			3
+
+
+// Additional.
+#define OPTN_X				4
+#define OPTA_Y				9
+#define OPTB_Y				13
+#define OPTC_Y				17
+#define OPTD_Y				21
+
+#define QUIZ_X				2
+#define QUIZ_Y				5
+
+#define TITLE_X				23
+#define TITLE_Y				3
+
+extern unsigned char local_cheat;
 
 #endif//_GLOBAL_MANAGER_H_

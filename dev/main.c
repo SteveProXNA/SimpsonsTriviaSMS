@@ -1,147 +1,68 @@
 #include "main.h"
 
-// Global variables.
-bool global_pause;
-
-unsigned char hacker_debug;
-unsigned char hacker_cheat, hacker_random;
-unsigned char hacker_music, hacker_sound;
-unsigned char hacker_extra;
-unsigned char enum_curr_screen_type, enum_next_screen_type;
-
-void custom_initialize();
-
-void ( *load_method[ MAX_STATES ] )();
-void ( *update_method[ MAX_STATES ] )( unsigned char *screen_type, const unsigned int curr_joypad1, const unsigned int prev_joypad1 );
-
-void main( void )
+void main(void)
 {
-	// Must be static to persist values!
-	static unsigned int curr_joypad1 = 0;
-	static unsigned int prev_joypad1 = 0;
+	// Global variables.
+	static bool global_pause;
+	unsigned char open_screen_type;
 
-	SMS_init();
-	SMS_displayOff();
-
+	devkit_SMS_init();
+	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 
-	SMS_setSpriteMode( SPRITEMODE_NORMAL );
-	SMS_useFirstHalfTilesforSprites( true );
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+	devkit_SMS_useFirstHalfTilesforSprites_True();
 
 	engine_content_manager_load_font();
 	engine_content_manager_load_sprites();
 
-	custom_initialize();
+	// Initialize.
+	engine_hack_manager_init();
+	engine_hack_manager_invert();
 
-	enum_curr_screen_type = SCREEN_TYPE_NONE;
-	enum_next_screen_type = SCREEN_TYPE_SPLASH;
+	engine_actor_manager_init();
+	engine_audio_manager_init();
+	engine_quiz_manager_init();
+	engine_score_manager_init();
+	engine_select_manager_init();
+	engine_sound_manager_init();
 
-	SMS_displayOn();
-	for(;;)
+	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_title;
+	engine_screen_manager_init( open_screen_type );
+
+	devkit_SMS_displayOn();
+	for (;;)
 	{
-		if( SMS_queryPauseRequested() )
+		if( devkit_SMS_queryPauseRequested() )
 		{
-			SMS_resetPauseRequest();
+			devkit_SMS_resetPauseRequest();
 			global_pause = !global_pause;
 			if( global_pause )
 			{
-				if( hacker_debug )
-				{
-					engine_font_manager_draw_text( LOCALE_PAUSED, 13, 12 );
-				}
-				PSGSilenceChannels();
+				devkit_PSGSilenceChannels();
 			}
 			else
 			{
-				if( hacker_debug )
-				{
-					engine_font_manager_draw_text( LOCALE_RESUME, 13, 12 );
-				}
-				PSGRestoreVolumes();
+				devkit_PSGRestoreVolumes();
 			}
 		}
 
-		if(global_pause)
+		if( global_pause )
 		{
 			continue;
 		}
 
-		if( enum_curr_screen_type != enum_next_screen_type )
-		{
-			enum_curr_screen_type = enum_next_screen_type;
-			load_method[ enum_curr_screen_type ]();
-		}
+		devkit_SMS_initSprites();
+		engine_input_manager_update();
 
-		SMS_initSprites();
+		engine_screen_manager_update();
 
-		curr_joypad1 = SMS_getKeysStatus();
-		update_method[ enum_curr_screen_type ]( &enum_next_screen_type, curr_joypad1, prev_joypad1 );
+		devkit_SMS_finalizeSprites();
+		devkit_SMS_waitForVBlank();
+		devkit_SMS_copySpritestoSAT();
 
-		SMS_finalizeSprites();
-		SMS_waitForVBlank();
-		SMS_copySpritestoSAT();
-
-		PSGFrame();
-		PSGSFXFrame();
-
-		prev_joypad1 = curr_joypad1;
+		devkit_PSGFrame();
+		devkit_PSGSFXFrame();
 	}
 }
-
-void custom_initialize()
-{
-	// Set load methods
-	load_method[screen_type_splash] = screen_splash_screen_load;
-	load_method[screen_type_title] = screen_title_screen_load;
-	load_method[screen_type_intro] = screen_intro_screen_load;
-	load_method[screen_type_level] = screen_level_screen_load;
-	load_method[screen_type_number] = screen_number_screen_load;
-	load_method[screen_type_ready] = screen_ready_screen_load;
-	load_method[screen_type_play] = screen_play_screen_load;
-	load_method[screen_type_quiz] = screen_quiz_screen_load;
-	load_method[screen_type_score] = screen_score_screen_load;
-	load_method[screen_type_over] = screen_over_screen_load;
-	load_method[screen_type_diff] = screen_diff_screen_load;
-	load_method[screen_type_long] = screen_long_screen_load;
-
-
-	// Set update methods
-	update_method[screen_type_splash] = screen_splash_screen_update;
-	update_method[screen_type_title] = screen_title_screen_update;
-	update_method[screen_type_intro] = screen_intro_screen_update;
-	update_method[screen_type_level] = screen_level_screen_update;
-	update_method[screen_type_number] = screen_number_screen_update;
-	update_method[screen_type_ready] = screen_ready_screen_update;
-	update_method[screen_type_play] = screen_play_screen_update;
-	update_method[screen_type_quiz] = screen_quiz_screen_update;
-	update_method[screen_type_score] = screen_score_screen_update;
-	update_method[screen_type_over] = screen_over_screen_update;
-	update_method[screen_type_diff] = screen_diff_screen_update;
-	update_method[screen_type_long] = screen_long_screen_update;
-
-
-	// Initialize hack manager.
-	engine_hack_manager_init();
-	engine_hack_manager_invert();
-
-
-	// Initialize other managers.
-	engine_quiz_manager_init();
-	engine_score_manager_init();
-	engine_select_manager_init();
-
-	// Initialize screens.
-	screen_bases_screen_init();
-	screen_splash_screen_init();
-	screen_title_screen_init();
-	screen_intro_screen_init();
-	screen_ready_screen_init();
-	screen_diff_screen_init();
-	screen_long_screen_init();
-	screen_play_screen_init();
-	screen_quiz_screen_init();
-	screen_over_screen_init();
-}
-
-SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
-SMS_EMBED_SDSC_HEADER( 1, 2, 2018, 3, 27, "StevePro Studios", "Simpsons Trivia", "Simpsons Trivia game for the SMS Power! 2018 Competition" );

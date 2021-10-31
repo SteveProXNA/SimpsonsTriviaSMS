@@ -1,0 +1,9 @@
+M:sound_object
+S:G$sound_sample_data$0$0({12}DA6d,DG,SC:U),E,0,0
+S:G$right02_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$wrong03_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$wrong02_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$right01_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$wrong01_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$right03_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$sound_sample_bank$0$0({6}DA6d,SC:U),D,0,0

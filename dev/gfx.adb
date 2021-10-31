@@ -1,0 +1,10 @@
+M:gfx
+S:G$font__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$font__tilemap__bin$0$0({128}DA128d,SC:U),D,0,0
+S:G$font__tiles__psgcompr$0$0({663}DA663d,SC:U),D,0,0
+S:G$right__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$right__tiles__psgcompr$0$0({175}DA175d,SC:U),D,0,0
+S:G$select__palette__bin$0$0({11}DA11d,SC:U),D,0,0
+S:G$select__tiles__psgcompr$0$0({166}DA166d,SC:U),D,0,0
+S:G$wrong__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$wrong__tiles__psgcompr$0$0({180}DA180d,SC:U),D,0,0

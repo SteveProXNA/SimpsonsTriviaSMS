@@ -1,0 +1,97 @@
+;!FILE score_manager.asm
+XL2
+H 9 areas 37 global symbols
+M score_manager
+O -mz80
+S _engine_font_manager_text Ref0000
+S .__.ABS. Def0000
+S _engine_font_manager_data_ZERO Ref0000
+A _CODE size 34 flags 0 addr 0
+S C$score_manager.c$20$1$5 Def0005
+S C$score_manager.c$17$0$0 Def0000
+S C$score_manager.c$21$1$5 Def0006
+S _engine_score_manager_base Def0006
+S C$score_manager.c$30$1$7 Def0020
+S C$score_manager.c$23$1$6 Def0006
+S C$score_manager.c$32$1$7 Def0023
+S C$score_manager.c$24$1$6 Def0013
+S A$score_manager$63 Def0000
+S C$score_manager.c$25$1$6 Def0013
+S A$score_manager$82 Def0006
+S A$score_manager$64 Def0003
+S C$score_manager.c$26$1$6 Def001C
+S A$score_manager$83 Def0009
+S C$score_manager.c$34$1$8 Def0023
+S C$score_manager.c$19$1$5 Def0000
+S A$score_manager$84 Def000A
+S C$score_manager.c$35$1$8 Def0033
+S A$score_manager$85 Def000D
+S C$score_manager.c$28$1$7 Def001C
+S A$score_manager$86 Def000E
+S C$score_manager.c$29$1$7 Def0020
+S A$score_manager$96 Def0013
+S A$score_manager$87 Def0011
+S A$score_manager$69 Def0005
+S Fscore_manager$__str_0$0$0 Def0016
+S A$score_manager$88 Def0012
+S XG$engine_score_manager_base$0$0 Def0013
+S Fscore_manager$draw_score$0$0 Def0023
+S G$engine_score_manager_init$0$0 Def0000
+S _engine_score_manager_init Def0000
+S G$engine_score_manager_update$0$0 Def001C
+S XFscore_manager$draw_score$0$0 Def0033
+S XG$engine_score_manager_init$0$0 Def0005
+S _engine_score_manager_update Def001C
+S A$score_manager$140 Def002D
+S A$score_manager$122 Def0020
+S A$score_manager$113 Def001C
+S A$score_manager$141 Def002E
+S A$score_manager$114 Def001F
+S A$score_manager$142 Def0031
+S A$score_manager$143 Def0032
+S A$score_manager$135 Def0023
+S XG$engine_score_manager_update$0$0 Def0020
+S G$engine_score_manager_base$0$0 Def0006
+S A$score_manager$136 Def0026
+S A$score_manager$137 Def0027
+S A$score_manager$138 Def0029
+S A$score_manager$148 Def0033
+S A$score_manager$139 Def002C
+A _DATA size 1 flags 0 addr 0
+S G$score_player$0$0 Def0000
+S _score_player Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 00 C9
+R 00 00 00 00 00 03 01 00
+T 06 00
+R 00 00 00 00
+T 06 00 21 17 03 E5 21 16 00 E5 CD 00 00 F1 F1 C3
+R 00 00 00 00 00 07 00 00 02 0B 00 00
+T 14 00 23 00
+R 00 00 00 00 00 02 00 00
+T 16 00
+R 00 00 00 00
+T 16 00 53 43 4F 52 45 00
+R 00 00 00 00
+T 1C 00
+R 00 00 00 00
+T 1C 00 21 00 00 34 C3 23 00
+R 00 00 00 00 00 03 01 00 00 07 00 00
+T 23 00
+R 00 00 00 00
+T 23 00 21 00 00 4E 06 00 21 1F 03 E5 C5 CD 00 00
+R 00 00 00 00 00 03 01 00 02 0E 02 00
+T 31 00 F1 F1 C9
+R 00 00 00 00

@@ -1,0 +1,350 @@
+;!FILE random_manager.asm
+XL2
+H 9 areas F6 global symbols
+M random_manager
+O -mz80
+S _rand Ref0000
+S _quiz_options Ref0000
+S .__.ABS. Def0000
+S _hacker_random Ref0000
+S _quiz_questions Ref0000
+S __modsint Ref0000
+A _CODE size 111 flags 0 addr 0
+S _engine_random_manager_init Def0000
+S Frandom_manager$load_random$0$0 Def0043
+S XG$engine_random_manager_init$0$0 Def0030
+S C$random_manager.c$102$2$57 Def00D5
+S C$random_manager.c$111$2$59 Def00DD
+S C$random_manager.c$102$3$58 Def00CB
+S C$random_manager.c$113$6$63 Def00DF
+S C$random_manager.c$122$2$59 Def0110
+S C$random_manager.c$109$4$61 Def0104
+S C$random_manager.c$114$6$63 Def00EF
+S C$random_manager.c$104$3$58 Def00D0
+S A$random_manager$100 Def0024
+S Frandom_manager$load_normal$0$0 Def009C
+S A$random_manager$110 Def002E
+S A$random_manager$101 Def0025
+S C$random_manager.c$107$6$63 Def00DB
+S A$random_manager$201 Def0066
+S A$random_manager$102 Def0026
+S C$random_manager.c$107$2$59 Def010A
+S C$random_manager.c$30$2$30 Def0030
+S A$random_manager$400 Def00FF
+S A$random_manager$310 Def00B9
+S A$random_manager$220 Def0079
+S A$random_manager$211 Def006A
+S A$random_manager$103 Def0028
+S C$random_manager.c$116$7$64 Def0103
+S A$random_manager$410 Def0104
+S A$random_manager$401 Def0100
+S A$random_manager$320 Def00C2
+S A$random_manager$311 Def00BA
+S A$random_manager$230 Def0082
+S A$random_manager$212 Def006B
+S C$random_manager.c$32$2$30 Def0031
+S C$random_manager.c$23$2$30 Def002A
+S A$random_manager$420 Def010E
+S A$random_manager$411 Def0105
+S A$random_manager$402 Def0101
+S A$random_manager$312 Def00BC
+S A$random_manager$231 Def0083
+S A$random_manager$213 Def006E
+S A$random_manager$150 Def0040
+S A$random_manager$412 Def0106
+S A$random_manager$313 Def00BD
+S A$random_manager$304 Def00B0
+S A$random_manager$232 Def0085
+S A$random_manager$214 Def0071
+S A$random_manager$142 Def003D
+S A$random_manager$133 Def0035
+S A$random_manager$115 Def0030
+S C$random_manager.c$25$2$30 Def0013
+S A$random_manager$413 Def0108
+S A$random_manager$332 Def00CA
+S A$random_manager$305 Def00B1
+S A$random_manager$242 Def008E
+S A$random_manager$233 Def0086
+S A$random_manager$224 Def007A
+S A$random_manager$215 Def0072
+S A$random_manager$206 Def0068
+S A$random_manager$170 Def0049
+S A$random_manager$107 Def002A
+S A$random_manager$360 Def00D7
+S A$random_manager$351 Def00D0
+S A$random_manager$324 Def00C4
+S A$random_manager$306 Def00B3
+S A$random_manager$261 Def009B
+S A$random_manager$234 Def0087
+S A$random_manager$225 Def007B
+S A$random_manager$216 Def0073
+S A$random_manager$171 Def004C
+S A$random_manager$108 Def002B
+S A$random_manager$406 Def0103
+S A$random_manager$370 Def00DD
+S A$random_manager$361 Def00D9
+S A$random_manager$352 Def00D1
+S A$random_manager$325 Def00C5
+S A$random_manager$307 Def00B4
+S A$random_manager$280 Def00A1
+S A$random_manager$253 Def0095
+S A$random_manager$235 Def0089
+S A$random_manager$226 Def007D
+S A$random_manager$217 Def0076
+S A$random_manager$190 Def005F
+S A$random_manager$181 Def0055
+S A$random_manager$172 Def004D
+S A$random_manager$163 Def0043
+S A$random_manager$109 Def002C
+S C$random_manager.c$40$2$36 Def003D
+S C$random_manager.c$34$1$34 Def0031
+S A$random_manager$425 Def0110
+S A$random_manager$380 Def00E8
+S A$random_manager$353 Def00D3
+S A$random_manager$326 Def00C6
+S A$random_manager$317 Def00BE
+S A$random_manager$308 Def00B5
+S A$random_manager$290 Def00AA
+S A$random_manager$281 Def00A2
+S A$random_manager$254 Def0096
+S A$random_manager$236 Def008A
+S A$random_manager$227 Def007E
+S A$random_manager$218 Def0077
+S A$random_manager$182 Def0058
+S A$random_manager$173 Def004E
+S A$random_manager$137 Def0038
+S A$random_manager$128 Def0031
+S C$random_manager.c$25$4$32 Def0024
+S C$random_manager.c$23$5$33 Def0011
+S C$random_manager.c$20$3$29 Def0005
+S A$random_manager$417 Def010A
+S A$random_manager$390 Def00F2
+S A$random_manager$381 Def00EB
+S A$random_manager$354 Def00D4
+S A$random_manager$345 Def00CB
+S A$random_manager$327 Def00C8
+S A$random_manager$318 Def00BF
+S A$random_manager$309 Def00B8
+S A$random_manager$282 Def00A4
+S A$random_manager$255 Def0097
+S A$random_manager$246 Def008F
+S A$random_manager$237 Def008B
+S A$random_manager$228 Def007F
+S A$random_manager$219 Def0078
+S A$random_manager$183 Def005A
+S A$random_manager$174 Def0051
+S A$random_manager$138 Def003B
+S A$random_manager$129 Def0034
+S C$random_manager.c$80$2$43 Def009B
+S A$random_manager$418 Def010B
+S A$random_manager$391 Def00F3
+S A$random_manager$382 Def00EC
+S A$random_manager$346 Def00CE
+S A$random_manager$319 Def00C0
+S A$random_manager$283 Def00A5
+S A$random_manager$274 Def009C
+S A$random_manager$256 Def0099
+S A$random_manager$247 Def0090
+S A$random_manager$238 Def008C
+S A$random_manager$229 Def0081
+S A$random_manager$184 Def005B
+S A$random_manager$175 Def0052
+S C$random_manager.c$90$2$52 Def00C4
+S C$random_manager.c$54$4$41 Def0043
+S C$random_manager.c$46$1$34 Def0040
+S A$random_manager$419 Def010C
+S A$random_manager$392 Def00F4
+S A$random_manager$383 Def00ED
+S A$random_manager$365 Def00DB
+S A$random_manager$275 Def009F
+S A$random_manager$248 Def0091
+S A$random_manager$194 Def0060
+S A$random_manager$185 Def005C
+S A$random_manager$176 Def0053
+S C$random_manager.c$82$2$43 Def009C
+S C$random_manager.c$38$1$34 Def0038
+S C$random_manager.c$36$2$35 Def0035
+S G$engine_random_manager_load$0$0 Def0031
+S A$random_manager$393 Def00F6
+S A$random_manager$384 Def00EE
+S A$random_manager$375 Def00DF
+S A$random_manager$294 Def00AC
+S A$random_manager$249 Def0093
+S A$random_manager$195 Def0061
+S A$random_manager$186 Def005D
+S A$random_manager$177 Def0054
+S A$random_manager$168 Def0045
+S Frandom_manager$load_mixed$0$0 Def00CB
+S C$random_manager.c$92$2$52 Def00AE
+S C$random_manager.c$85$2$50 Def00A6
+S C$random_manager.c$65$2$43 Def0095
+S C$random_manager.c$56$4$41 Def0045
+S C$random_manager.c$44$2$37 Def0040
+S C$random_manager.c$27$5$33 Def0015
+S A$random_manager$394 Def00F7
+S A$random_manager$376 Def00E0
+S A$random_manager$358 Def00D5
+S A$random_manager$196 Def0062
+S A$random_manager$169 Def0046
+S C$random_manager.c$52$2$39 Def0060
+S C$random_manager.c$57$4$41 Def0055
+S C$random_manager.c$49$1$34 Def0043
+S C$random_manager.c$18$2$28 Def000B
+S C$random_manager.c$14$0$0 Def0000
+S A$random_manager$395 Def00F8
+S A$random_manager$377 Def00E3
+S A$random_manager$359 Def00D6
+S A$random_manager$287 Def00A6
+S A$random_manager$197 Def0064
+S C$random_manager.c$85$3$51 Def009C
+S XFrandom_manager$load_random$0$0 Def009B
+S A$random_manager$396 Def00FA
+S A$random_manager$378 Def00E6
+S A$random_manager$288 Def00A7
+S C$random_manager.c$18$3$29 Def0000
+S A$random_manager$397 Def00FB
+S A$random_manager$388 Def00EF
+S A$random_manager$379 Def00E7
+S A$random_manager$289 Def00A8
+S C$random_manager.c$92$4$54 Def00BE
+S C$random_manager.c$90$5$55 Def00AC
+S C$random_manager.c$87$3$51 Def00A1
+S C$random_manager.c$69$2$43 Def0068
+S A$random_manager$398 Def00FC
+S A$random_manager$389 Def00F0
+S A$random_manager$299 Def00AE
+S C$random_manager.c$97$2$52 Def00CA
+S C$random_manager.c$71$6$47 Def006A
+S C$random_manager.c$59$5$42 Def005F
+S A$random_manager$399 Def00FE
+S C$random_manager.c$67$4$45 Def008F
+S C$random_manager.c$72$6$47 Def007A
+S C$random_manager.c$99$2$52 Def00CB
+S A$random_manager$70 Def000B
+S C$random_manager.c$94$5$55 Def00B0
+S C$random_manager.c$65$6$47 Def0066
+S A$random_manager$71 Def000C
+S A$random_manager$90 Def0019
+S A$random_manager$72 Def000D
+S A$random_manager$63 Def0005
+S XFrandom_manager$load_normal$0$0 Def00CA
+S C$random_manager.c$74$7$48 Def008E
+S A$random_manager$91 Def001A
+S A$random_manager$82 Def0013
+S A$random_manager$73 Def000F
+S A$random_manager$64 Def0006
+S _engine_random_manager_load Def0031
+S A$random_manager$92 Def001D
+S A$random_manager$65 Def0008
+S A$random_manager$93 Def001E
+S A$random_manager$66 Def0009
+S A$random_manager$57 Def0000
+S A$random_manager$94 Def001F
+S A$random_manager$58 Def0003
+S A$random_manager$95 Def0021
+S A$random_manager$77 Def0011
+S A$random_manager$96 Def0022
+S A$random_manager$87 Def0015
+S A$random_manager$88 Def0016
+S A$random_manager$89 Def0018
+S G$engine_random_manager_init$0$0 Def0000
+S XG$engine_random_manager_load$0$0 Def0040
+S XFrandom_manager$load_mixed$0$0 Def0110
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 01 00 00 1E 00
+R 00 00 00 00 02 03 04 00
+T 05 00
+R 00 00 00 00
+T 05 00 6B 26 00 09 36 00 1C 7B D6 32 38 F4 0E 00
+R 00 00 00 00
+T 13 00
+R 00 00 00 00
+T 13 00 06 00
+R 00 00 00 00
+T 15 00
+R 00 00 00 00
+T 15 00 69 26 00 29 29 11 00 00 19 58 16 00 19 36
+R 00 00 00 00 02 08 01 00
+T 23 00 00 04 78 D6 04 38 EB 0C 79 D6 32 38 E3 C9
+R 00 00 00 00
+T 31 00
+R 00 00 00 00
+T 31 00 3A 00 00 3D CA 9C 00 3A 00 00 D6 02 CA
+R 00 00 00 00 02 03 03 00 00 07 00 00 02 0A 03 00
+T 3E 00 CB 00 C3 43 00
+R 00 00 00 00 00 02 00 00 00 05 00 00
+T 43 00
+R 00 00 00 00
+T 43 00 0E 00
+R 00 00 00 00
+T 45 00
+R 00 00 00 00
+T 45 00 C5 CD 00 00 11 32 00 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 04 00 00 02 0C 05 00
+T 53 00 C1 5D 21 00 00 16 00 19 7E B7 20 E6 71 0C
+R 00 00 00 00 02 05 04 00
+T 61 00 79 D6 32 38 DF 0E 00
+R 00 00 00 00
+T 68 00
+R 00 00 00 00
+T 68 00 06 00
+R 00 00 00 00
+T 6A 00
+R 00 00 00 00
+T 6A 00 C5 CD 00 00 11 04 00 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 04 00 00 02 0C 05 00
+T 78 00 5D C1 69 26 00 29 29 3E 00 00 85 6F 3E
+R 00 00 00 00 0B 0A 01 00
+T 84 00 00 00 8C 67 16 00 19 7E B7 20 DC 70 04 78
+R 00 00 00 00 8B 02 01 00
+T 91 00 D6 04 38 D5 0C 79 D6 32 38 CD C9
+R 00 00 00 00
+T 9C 00
+R 00 00 00 00
+T 9C 00 01 00 00 1E 00
+R 00 00 00 00 02 03 04 00
+T A1 00
+R 00 00 00 00
+T A1 00 6B 26 00 09 73 1C 7B D6 32 38 F5 0E 00
+R 00 00 00 00
+T AE 00
+R 00 00 00 00
+T AE 00 06 00
+R 00 00 00 00
+T B0 00
+R 00 00 00 00
+T B0 00 69 26 00 29 29 11 00 00 19 58 16 00 19 70
+R 00 00 00 00 02 08 01 00
+T BE 00 04 78 D6 04 38 EC 0C 79 D6 32 38 E4 C9
+R 00 00 00 00
+T CB 00
+R 00 00 00 00
+T CB 00 01 00 00 1E 00
+R 00 00 00 00 02 03 04 00
+T D0 00
+R 00 00 00 00
+T D0 00 6B 26 00 09 73 1C 7B D6 32 38 F5 0E 00
+R 00 00 00 00
+T DD 00
+R 00 00 00 00
+T DD 00 06 00
+R 00 00 00 00
+T DF 00
+R 00 00 00 00
+T DF 00 C5 CD 00 00 11 04 00 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 04 00 00 02 0C 05 00
+T ED 00 5D C1 69 26 00 29 29 3E 00 00 85 6F 3E
+R 00 00 00 00 0B 0A 01 00
+T F9 00 00 00 8C 67 16 00 19 7E B7 20 DC 70 04 78
+R 00 00 00 00 8B 02 01 00
+T 06 01 D6 04 38 D5 0C 79 D6 32 38 CD C9
+R 00 00 00 00

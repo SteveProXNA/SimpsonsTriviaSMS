@@ -1,0 +1,13 @@
+M:bank8
+S:G$actor08__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$actor08__tilemap__stmcompr$0$0({92}DA92d,SC:U),D,0,0
+S:G$actor08__tiles__psgcompr$0$0({2033}DA2033d,SC:U),D,0,0
+S:G$actor09__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$actor09__tilemap__stmcompr$0$0({95}DA95d,SC:U),D,0,0
+S:G$actor09__tiles__psgcompr$0$0({1849}DA1849d,SC:U),D,0,0
+S:G$actor10__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$actor10__tilemap__stmcompr$0$0({75}DA75d,SC:U),D,0,0
+S:G$actor10__tiles__psgcompr$0$0({2106}DA2106d,SC:U),D,0,0
+S:G$actor11__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$actor11__tilemap__stmcompr$0$0({83}DA83d,SC:U),D,0,0
+S:G$actor11__tiles__psgcompr$0$0({2535}DA2535d,SC:U),D,0,0
