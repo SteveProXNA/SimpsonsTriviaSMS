@@ -1,5 +1,6 @@
 *.sms
-
+*.db
+*.vs
 
 # Prerequisites
 *.d
